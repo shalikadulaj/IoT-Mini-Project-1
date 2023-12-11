@@ -14,8 +14,7 @@ listener 1886 INADDR_ANY
   ipv6 true
 
 
-<<<<<<< HEAD
-#shalika
-=======
-#11111
->>>>>>> ef347fc24ea509b1bd83daa3f8d960243deb0122
+
+
+
+
