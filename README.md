@@ -25,5 +25,9 @@ testing3
 
 test 4
 
+<<<<<<< HEAD
 test 5
 
+=======
+chnages
+>>>>>>> cc97a0d6bb9eaa1197b27e1f8a2485ada4ef13f7
