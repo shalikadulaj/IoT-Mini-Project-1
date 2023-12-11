@@ -18,26 +18,26 @@ listener 1886 INADDR_ANY
 
 
 
-#AWS IoT Core
+# AWS IoT Core
 
 
 
-#AWS Timestream 
-
-
-
-
-#Grafana
+# AWS Timestream 
 
 
 
 
-#AWS SNS
+# Grafana
 
 
 
-#AWS Dynamodb
 
+# AWS SNS
+
+
+
+
+# AWS Dynamodb
 
 
 
