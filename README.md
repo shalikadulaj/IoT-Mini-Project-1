@@ -2,6 +2,8 @@
 
 Edit a file config.conf (vim config.conf) with the following content:
 
+#Sensor Reading
+
 ## add some debug output
 trace_output protocol
    
@@ -12,6 +14,30 @@ listener 1885 INADDR_ANY mqtts
 ## listen to MQTT connections on tcp port 1886
 listener 1886 INADDR_ANY
   ipv6 true
+
+
+
+
+#AWS IoT Core
+
+
+
+#AWS Timestream 
+
+
+
+
+#Grafana
+
+
+
+
+#AWS SNS
+
+
+
+#AWS Dynamodb
+
 
 
 
