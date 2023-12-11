@@ -35,6 +35,7 @@ listener 1886 INADDR_ANY
 ## AWS SNS
 
 
+![11 12 2023_15 50 03_REC](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/0b630bb5-1d4c-429b-bbc6-4b7a3594b54b)
 
 
 ## AWS Dynamodb
