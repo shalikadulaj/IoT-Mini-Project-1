@@ -5,7 +5,8 @@ Edit a file config.conf (vim config.conf) with the following content:
 
 ## Introduction
 
-
+University of Oulu,Group Project,Getting sensor data form FIT IoT Lab.
+We are only using free AWS services for this project.
 
 
 ## Requirements
