@@ -2,6 +2,14 @@
 
 Edit a file config.conf (vim config.conf) with the following content:
 
+
+## Requirements
+
+- AWS Account
+
+- 
+
+
 #Sensor Reading
 
 ## add some debug output
