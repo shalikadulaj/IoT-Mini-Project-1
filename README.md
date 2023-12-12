@@ -3,6 +3,11 @@
 Edit a file config.conf (vim config.conf) with the following content:
 
 
+## Introduction
+
+
+
+
 ## Requirements
 
 - AWS Account
@@ -10,7 +15,7 @@ Edit a file config.conf (vim config.conf) with the following content:
 - 
 
 
-#Sensor Reading
+# Sensor Reading
 
 ## add some debug output
 trace_output protocol
