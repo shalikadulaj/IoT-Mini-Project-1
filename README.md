@@ -61,9 +61,12 @@ A thing resource is a digital representation of a physical device or logical ent
 Follow the below steps to create a thing 
 
 	AWS IoT Core > Manage > All Device > Things > Create Things 
--Specify thing properties 
--Configure device certificate 
--Attach policies to the certificate 
+- Specify thing properties 
+
+- Configure device certificate 
+
+- Attach policies to the certificate 
+
 
 Finally, you must download the device certificate, key files, and Root CA Certificates. These certificates should be added to the code. It is mentioned in the code, that you can replace the certificates with yours's. 
 
