@@ -62,7 +62,7 @@ Follow the below steps to create a thing
 
 AWS IoT Core > Manage > All Device > Things > Create Things 
 
-    Specify thing properties 
+         Specify thing properties 
 
 	 Configure device certificate 
 
@@ -90,23 +90,23 @@ First you need to add rules. Follow below steps to add rules
 
 AWS IoT > Message Routing > Rules > Create rule 
 
-	Specify rule properties 
+  Specify rule properties 
 
 Configure SQL statement 
 
-	Write this quarry to select all the data coming from the topic, and ingest to the timestream. 
+   Write this quarry to select all the data coming from the topic, and ingest to the timestream. 
 
 	SELECT temperature,pressure,lightLevel FROM 'sensor/station1'    
 
 Attach rule actions - This is the action when receiving data. 
 
-	Select - “Timestream table (write message into a Timestream table)” 
+    Select - “Timestream table (write message into a Timestream table)” 
 
-	Add database - If you have not created database you can create a database by clicking 		on “Create Telestream database”. Select standard database. 
+    Add database - If you have not created database you can create a database by clicking 		on “Create Telestream database”. Select standard database. 
 
-	Add Table – Click on create Timestream table 
+    Add Table – Click on create Timestream table 
 
-	Add a IAM role – Click on create new role 
+    Add a IAM role – Click on create new role 
 
 Review and create 
 
