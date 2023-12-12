@@ -68,13 +68,28 @@ AWS IoT Core > Manage > All Device > Things > Create Things
 
 	 Attach policies to the certificate 
 
-Finally, you have to download the device certificate, key files, and Root CA Certificates. These certificates should be added to the code. 
+Finally, you must download the device certificate, key files, and Root CA Certificates. These certificates should be added to the code. It is mentioned in the code, that you can replace the certificates with yours's. 
 
 ![3](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/df5bf67f-3725-4837-8467-de4bcd8478ba)
 
-As well as need to add the End point to code. You can get the Endpoint from below path 
+As well as need to add the End point to the code. You can get the Endpoint from the below path 
 
-IoT Core  > Settings > Device data endpoint 
+As well as need to add the End point to the code. You can get the Endpoint from the below path 
+
+AWS IoT  > Settings > Device data endpoint 
+
+At this moment you can check the data received. If not, you have to check the above steps again. To check follow the below steps. 
+
+AWS IoT > Test > MQTT test client > Subscribe to a topic (sensor/station1) > Subscribe 
+
+Replace the topic with your topic. 
+
+Now you can see data is received below 
+
+
+
+
+
 
 ## AWS Timestream 
 
@@ -115,18 +130,101 @@ Review and create
 
 AWS Managed Grafana is a fully managed and scalable service that simplifies the deployment, operation, and scaling of Grafana for analytics and monitoring. It integrates seamlessly with other AWS services, offering a user-friendly interface for creating dashboards and visualizations to gain insights from diverse data sources. 
 
-Visualizing data using AWS Timestream as a data source. 
+We are using Grafana for visualizing data using AWS Timestream as a data source. 
+
+You can create workspace as below 
+
+Amazon Managed Grafana > All workspaces > Create workspace 
+
+ 	Specify workspace details 
+
+		Give a unique name 
+
+		Select Grafana version – We are using 8.4  
+
+ 
+
+Configure settings 
+
+	Select Authentication access - “AWS IAM Identity Center (successor to AWS SSO)” 
+
+Service managed permission settings 
+
+	Select data sources  - “Amazon TimeStream” 
+
+Review and create 
+
+Creating user 
+
+Amazon Managed Grafana > All workspaces > Select workspace created above > Authentication > Assign new user or group > Select User > Make admin 
+
+If you cant find user you have to add a using below method 
+
+IAM Identity Center > Users >  Add user (giving email and other information) 
+
+After adding you can see the user under configure users in your workspace 
+ 
+
+Loging to Grafana workspace 
+
+Amazon Managed Grafana > All workspaces > Select workspace created above >  Click on “Grafana workspace URL” 
+
+Sign in with AWS SSO 
+
+Add Data Source > Select Amazon Timestream > Select default region (should be equal to Endpoint region) 
+
+Add data base, table and measure. Then save 
+
+Now you are successfully connected the data source 
+
+Then using dashboard, you can create a dashboard as you need. 
+
 
 
 ## AWS SNS
 
 Amazon Simple Notification Service (SNS) is a fully managed messaging service by AWS. It enables the publishing of messages to a variety of endpoints, including mobile devices, email, and more. SNS simplifies the creation and management of message-driven applications, providing flexibility and scalability for diverse communication scenarios. 
 
+In here rules are set for triggering email alerts using AWS SNS service. To set rules follow below steps. 
+
+AWS IoT > Message Routing > Rules > Create rule 
+
+Specify rule properties 
+
+Configure SQL statemen 
+
+	Write this quarry to select  data once the temperature value is greater than 50. 			And data will be sent to the topic.  
+
+	SELECT *,timestamp() as ts FROM 'sensor/station1' WHERE temperature > 50 
+
+Attach rule actions - This is the action when receiving data. 
+
+	Select - “Simple Notification Service (SNS)” 
+
+	Add SNS topic – Create SNS topic 
+
+	Add a IAM role – Click on create new role 
+
+Review and create 
+
+Then you need to create a subscription. Follow below steps 
+
+Amazon SNS > Topics > Select notification which you create above > Create subscription 
+
+	Select protocol as “Email”. If you need to send any notification, you select any one option. 
+
+	Add Endpoint – email address  
+
+               Create Subscription 
+
+	Login to email and confirm the subscription 
  
 
 Here rules are set for triggering email alerts using the AWS SNS service. 
 
-Write sql quarries to trigger AWS SNS 
+Write SQL quarries to trigger AWS SNS 
+
+![4](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/6e768cf1-1fcb-4dbf-bcbf-20e927bce478)
 
 
 
@@ -134,7 +232,21 @@ Write sql quarries to trigger AWS SNS
 
 AWS DynamoDB, a fully managed NoSQL database, we are using this for storing alert data. With seamless scalability and low-latency access, DynamoDB ensures reliable and fast retrieval of alert information. Its flexible schema accommodates evolving data needs, making it a robust solution for storing and retrieving dynamic alert data. 
 
+ AWS DynamoDB, a fully managed NoSQL database, we are using this for storing alert data. With seamless scalability and low-latency access, DynamoDB ensures reliable and fast retrieval of alert information. Its flexible schema accommodates evolving data needs, making it a robust solution for storing and retrieving dynamic alert data. 
+
+Create rule for ingesting alert data into dynamoDB 
+
  
+
+AWS IoT > Message Routing > Rules > Select rule which you create above (for sending email) 
+
+	Add another rule action  
+
+Choose an action - “DyanamoDBv2 (Split message into multiple colums of a DynamoDB table” 
+
+Add table – Click on “Create DynamoDB table” 
+
+		Add a IAM role – Click on “create new role” 
 
 
 
