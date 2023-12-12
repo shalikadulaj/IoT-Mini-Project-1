@@ -80,9 +80,35 @@ IoT Core  > Settings > Device data endpoint
 
 AWS Timestream is a fully managed, serverless time-series database service provided by Amazon Web Services (AWS). It is specifically designed to handle time-series data at scale. Time-series data is characterized by data points associated with timestamps 
 
-In this project Data from the IoT core is injected into the AWS Timestream database using AWS rules 
+In this project Data from the IoT core is ingested into the AWS Timestream database using AWS rules. 
 
-JSON values of Date and Time,Station ID,Device ID ,Temperature ,Pressure and Light level insert in to the particular table 
+Ingesting data into Timestream 
+
+JSON values of Date and Time, Station ID, Device ID, Temperature, Pressure and Light level insert into the particular table. 
+
+First you need to add rules. Follow below steps to add rules 
+
+AWS IoT > Message Routing > Rules > Create rule 
+
+	Specify rule properties 
+
+Configure SQL statement 
+
+	Write this quarry to select all the data coming from the topic, and ingest to the timestream. 
+
+	SELECT temperature,pressure,lightLevel FROM 'sensor/station1'    
+
+Attach rule actions - This is the action when receiving data. 
+
+	Select - “Timestream table (write message into a Timestream table)” 
+
+	Add database - If you have not created database you can create a database by clicking 		on “Create Telestream database”. Select standard database. 
+
+	Add Table – Click on create Timestream table 
+
+	Add a IAM role – Click on create new role 
+
+Review and create 
 
 
 ## AWS Managed Grafana
