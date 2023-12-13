@@ -212,6 +212,51 @@ Use the CLI-Tools to flash the Sensor_Read firmware that you have just built on 
    username@grenoble:~/RIOT/$ iotlab-node --flash examples/IoT-Mini-Project-1/bin/iotlab-m3/Sensing_Layer.elf -l grenoble,m3,2
 
 ```
+Open the Sensor Node m3-2 shell  and check the Global IPV6 prefix is obtained from the border router subnet using help -> ifconfig
+
+```ruby
+ username@grenoble:~/RIOT$ nc m3-2 20000
+> help
+Command              Description
+---------------------------------------
+start                Start the station
+6ctx                 6LoWPAN context configuration tool
+ifconfig             Configure network interfaces
+nib                  Configure neighbor information base
+ping                 Ping via ICMPv6
+pm                   interact with layered PM subsystem
+ps                   Prints information about running threads.
+reboot               Reboot the node
+rpl                  rpl configuration tool ('rpl help' for more information)
+version              Prints current RIOT_VERSION
+> ifconfig
+Iface  5  HWaddr: 35:3F  Channel: 11  NID: 0x23  PHY: O-QPSK 
+          
+          Long HWaddr: BA:D0:5B:74:8D:B9:35:3F 
+           TX-Power: 0dBm  State: IDLE  max. Retrans.: 3  CSMA Retries: 4 
+          AUTOACK  ACK_REQ  CSMA  L2-PDU:102  MTU:1280  HL:64  RTR  
+          RTR_ADV  6LO  IPHC  
+          Source address length: 8
+          Link type: wireless
+          inet6 addr: fe80::b8d0:5b74:8db9:353f  scope: link  VAL
+          inet6 addr: 2001:660:5307:3100:b8d0:5b74:8db9:353f  scope: global  VAL
+          inet6 group: ff02::2
+          inet6 group: ff02::1
+          inet6 group: ff02::1:ffb9:353f
+          inet6 group: ff02::1a
+          
+          Statistics for Layer 2
+            RX packets 5  bytes 334
+            TX packets 5 (Multicast: 2)  bytes 264
+            TX succeeded 5 errors 0
+          Statistics for IPv6
+            RX packets 4  bytes 368
+            TX packets 5 (Multicast: 2)  bytes 354
+            TX succeeded 5 errors 0
+
+
+```
+
 </details>
 
 <details>
@@ -264,15 +309,7 @@ root@node-a8-1:~# broker_mqtts config.conf
 20170715 001526.115 CWNAN0014I MQTT protocol starting, listening on port 1886
 
 ```
-Open the Sensor Node m3-2 terminal and check the Global IP is obtained from the border router subnet.
 
-```ruby
- nc m3-2 20000
- ifconfig
- Add global address of the node
-
-
-```
 if you see the global ipv6 prefix address configured then start the communication with MQTTs broker by executing the following command in the node shell.
 ```ruby
  nc m3-2 20000
