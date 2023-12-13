@@ -203,6 +203,7 @@ net.ipv6.conf.tap0.accept_ra = 0
 Now, in another terminal, SSH to the SSH frontend and build the required firmware for the other node.
 
 ```ruby
+    username@grenoble:~$ cd RIOT
    username@grenoble:~/RIOT/$ source /opt/riot.source
    username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=11 BOARD=iotlab-m3 -C examples/" " clean all
 ```
