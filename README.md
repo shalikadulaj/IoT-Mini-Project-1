@@ -106,7 +106,7 @@ local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.inf
 
 <details>
 
-<summary> 1. setup RIOT OS environment </summary>
+<summary> STEP 1. Setup RIOT OS environment </summary>
 
 #### logged in to FIT IOT-LAB and ssh to the Grenoble site.
 
