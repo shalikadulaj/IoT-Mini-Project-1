@@ -3,9 +3,9 @@
 
 ### Group Members
 
-Shalika Dulaj
-Ana Ferreira
-Kavinda Rathnayaka
+*Shalika Dulaj
+*Ana Ferreira
+*Kavinda Rathnayaka
 
 
 ## Introduction
