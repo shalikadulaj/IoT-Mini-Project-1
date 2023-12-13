@@ -170,10 +170,24 @@ The border firmware is built using the RIOT [gnrc_border_router example](https:/
 ```
 Use the CLI-Tools to flash the gnrc_border_router firmware that you have just built on the first M3 node. Here we use m3-1 but it may change in your case:
 ```ruby
- username@grenoble:~/RIOT/$ iotlab-node --flash examples/gnrc_border_router/bin/iotlab-m3/gnrc_border_router.elf -l saclay,m3,1
+ username@grenoble:~/RIOT/$ iotlab-node --flash examples/gnrc_border_router/bin/iotlab-m3/gnrc_border_router.elf -l grenoble,m3,1
 ```
+Now you can configure the network of the border router on m3-1 and propagate an IPv6 prefix with ethos_uhcpd.py
 
+```ruby
+username@grenoble:~$ sudo ethos_uhcpd.py m3-1 tap0 2001:660:5307:3100::1/64
+```
+The network is finally configured:
 
+```ruby
+net.ipv6.conf.tap0.forwarding = 1
+net.ipv6.conf.tap0.accept_ra = 0
+----> ethos: sending hello.
+----> ethos: activating serial pass through.
+----> ethos: hello reply received
+```
+> Note 1: leave the terminal open (you don’t want to kill ethos_uhcpd.py, it bridges the BR to the front-end network)
+> Note 2: If you have an error “Invalid prefix – Network overlapping with routes”, it’s because another experiment is using the same ipv6 prefix (e.g. 2001:660:5307:3100::1/64).
 </details>
 
 
