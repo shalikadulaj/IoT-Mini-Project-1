@@ -106,7 +106,7 @@ local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.inf
 
 ### Setup RIOT OS 
 
-> type here
+AWS IoT > Test > MQTT test client > Subscribe to a topic (sensor/station1) > Subscribe 
 
 
 
