@@ -1,6 +1,6 @@
 # :octocat: IoT-Mini-Project-1
 ---
-
+https://g-69ca660d47.grafana-workspace.eu-west-1.amazonaws.com/dashboard/snapshot/t3t2EDBWwYIGj4mgoov264fxaUZbqxos?orgId=1&refresh=5s
 Edit a file config.conf (vim config.conf) with the following content:
 
 
