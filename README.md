@@ -128,10 +128,10 @@ Connect to the SSH frontend of the Grenoble site of FIT/IoT-LAB by using the use
 
 <summary> STEP 2. Download Sensor Node Firmware </summary>
 
-#### Clone the RIOT OS repository from GitHub:
+#### Clone the Sensor Node repository from GitHub:
 
 ```ruby
-   username@grenoble:~$ git clone https://github.com/RIOT-OS/RIOT.git
+   username@grenoble:~$ git clone ""
 ```
 
 </details>
