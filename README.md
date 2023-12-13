@@ -39,24 +39,14 @@ Amazon Web Services (AWS) is a leading cloud platform offering a comprehensive s
 
 https://docs.aws.amazon.com/index.html 
 
-<div align="center">
-	
-![1 consol](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/49f29d6d-afdc-4c8c-9ca6-81ae0961c3d6)
 
-
-</div>
 
 ## AWS IoT Core
 
 AWS IoT Core is a managed cloud service that facilitates secure communication between IoT devices and the AWS Cloud. It ensures encrypted connectivity, device management, and seamless integration with AWS services. With features like device shadows and a scalable architecture, it's ideal for building secure and scalable IoT applications. 
 
 https://docs.aws.amazon.com/iot/ 
-<div align="center">
 
-![iot core](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/fd9b551f-bc3a-40f5-9816-d71e174e4d57)
-
-
-</div>
 
 The border router publishes sensor data from FIT IoT Lab to the specific topic in AWS IoT core. There are rules to control data, which receive to the IoT core.  
 
@@ -110,7 +100,7 @@ AWS Timestream is a fully managed, serverless time-series database service provi
 
 **Ingesting data into Timestream**
 
-Sample JSON data set
+Sample JSON data
 
 	{
 	  "id": "0",
