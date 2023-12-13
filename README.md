@@ -27,7 +27,7 @@ This project was created as part of the first mini-project assignment for the In
 
 For this implementation, we have used the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller to read Temperature, Atmospheric Pressure, and LUX level. FIT IOT-LAB M3 is based on an STM32 (ARM Cortex M3) microcontroller controller with an ATMEL radio interface in 2.4 GHz and 4 sensors.
 
-###Sensors
+### Sensors
 4 sensors connected to the MCU via the I2C bus are embedded into the IoT-LAB M3 board:
 
 - the light sensor: this measures ambient light intensity in lux.  [ISL29020](https://www.iot-lab.info/assets/misc/docs/iot-lab-m3/ISL29020.pdf)
