@@ -59,7 +59,31 @@ To make the sensor layer more efficient we are considering implementing/will imp
 
 A broader router is used to propagate public IPv6 addresses across the local network, facilitating the connection between the FIT IOT-LAB M3 sensor node and AWS services. In the assignment, we have used the [Border-router](https://www.iot-lab.info/learn/tutorials/riot/riot-public-ipv6-m3/) example provided by the FIT IOT-LAB.
 
-### MQTTSN broker and MQTTSN Client
+![Screenshot 2023-12-13 at 17 15 30](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/ccf00e39-a42f-46b4-902c-ee3c116c1a1b)
+
+FIT IOT-LAB provides a pool of IPV6/64 addresses per site that can be used to build an IPV6 network. [Read More](https://www.iot-lab.info/docs/getting-started/ipv6/)
+
+![Screenshot 2023-12-13 at 17 17 34](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/b9aaf43d-ca39-4287-b6b7-cdf43b4b8663)
+
+
+
+#### MQTT
+
+Since we are using AWS-IOT core to store and visualize the data, we decided to use the MQTT/MQTT-SN protocol. 
+MQTT stands for "Message Queuing Telemetry Transport" and was built by IBM. it is a lightweight and widely adopted messaging protocol specially designed for low-power IoT devices. MQTT is useful when streaming data or event-based data. the main advantage of this protocol is that it consumes very little power when sending payloads.
+
+##### MQTTSN Architecture
+
+MQTT has a publisher-subscriber model and supports many-to-many communication. The sender and receiver of the messages are decoupled. There are two basic components in this architecture.
+
+* Client
+
+* Broker
+
+Clients can publish messages on a topic to the broker. The subscribing client can fetch messages from that topic through the broker. Thus the broker decouples the publisher and the subscriber. The broker is responsible for receiving all messages, filtering the messages, determining who is subscribed to each message, and sending the message to these subscribed clients.
+
+![Screenshot 2023-12-13 at 17 18 16](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/3bbdb3a3-970f-46b9-8829-fb951fec3994)
+
 
 
 ## :cloud: AWS 
