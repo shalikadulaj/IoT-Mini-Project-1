@@ -168,7 +168,7 @@ The border firmware is built using the RIOT [gnrc_border_router example](https:/
 ```ruby
  username@grenoble:~$ cd RIOT
  username@grenoble:~/RIOT/$ source /opt/riot.source
- username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=<channel> BOARD=iotlab-m3 -C examples/gnrc_border_router clean all
+ username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=11 BOARD=iotlab-m3 -C examples/gnrc_border_router clean all
 ```
 Use the CLI-Tools to flash the gnrc_border_router firmware that you have just built on the first M3 node. Here we use m3-1 but it may change in your case:
 ```ruby
@@ -203,7 +203,7 @@ Now, in another terminal, SSH to the SSH frontend and build the required firmwar
 
 ```ruby
    username@grenoble:~/RIOT/$ source /opt/riot.source
-   username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=<channel> BOARD=iotlab-m3 -C examples/" " clean all
+   username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=11 BOARD=iotlab-m3 -C examples/" " clean all
 ```
 Use the CLI-Tools to flash the Sensor_Read firmware that you have just built on the first M3 node. Here we use m3-2 but it may change in your case:
 ```ruby
