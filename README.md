@@ -78,7 +78,13 @@ MQTT has a publisher-subscriber model and supports many-to-many communication. T
 
 Clients can publish messages on a topic to the broker. The subscribing client can fetch messages from that topic through the broker. Thus the broker decouples the publisher and the subscriber. The broker is responsible for receiving all messages, filtering the messages, determining who is subscribed to each message, and sending the message to these subscribed clients.
 
+<div align="center">
+
+
+
 ![Screenshot 2023-12-13 at 17 18 16](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/3bbdb3a3-970f-46b9-8829-fb951fec3994)
+
+</div>	
 
 ##### RSMB - Really Small Message Broker
 
@@ -137,7 +143,8 @@ At this moment you can check whether the data is receiving. If not, you have to 
 Replace the topic with your topic. Now you can see the data is receiving as below. 
 
 <div align="center">
-	
+
+
 ![5](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/edc49f9e-cd09-487c-ad08-107e6074c859)
 
 </div>
