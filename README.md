@@ -104,7 +104,7 @@ local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.inf
 
 ## Getting Started 
 
-### Setup RIOT OS
+### Setup RIOT OS 
 
 
 
