@@ -214,6 +214,8 @@ Use the CLI-Tools to flash the Sensor_Read firmware that you have just built on 
 ```
 Open the Sensor Node m3-2 shell  and check the Global IPV6 prefix is obtained from the border router subnet using help -> ifconfig
 
+In this case it is - inet6 addr: 2001:660:5307:3100:b8d0:5b74:8db9:353f  scope: global  VAL
+
 ```ruby
  username@grenoble:~/RIOT$ nc m3-2 20000
 > help
