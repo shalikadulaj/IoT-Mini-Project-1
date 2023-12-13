@@ -196,6 +196,26 @@ net.ipv6.conf.tap0.accept_ra = 0
 
 </details>
 
+<details>
+
+<summary>STEP 4. Build the Sensor_Read firmware </summary>
+
+Now, in another terminal, SSH to the SSH frontend and build the required firmware for the other node.
+
+```ruby
+   username@grenoble:~/RIOT/$ source /opt/riot.source
+   username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=<channel> BOARD=iotlab-m3 -C examples/" " clean all
+```
+Use the CLI-Tools to flash the Sensor_Read firmware that you have just built on the first M3 node. Here we use m3-2 but it may change in your case:
+```ruby
+username@grenoble:~/RIOT/$ iotlab-node --flash examples/""/bin/iotlab-m3/"".elf -l grenoble,m3,2
+
+```
+</details>
+
+
+
+
 
 ## Data Management and Visualization
 
