@@ -131,9 +131,20 @@ Connect to the SSH frontend of the Grenoble site of FIT/IoT-LAB by using the use
 #### Clone the Sensor Node repository from GitHub:
 
 ```ruby
-   username@grenoble:~$ git clone ""
+   username@grenoble:~$ git clone " "
 ```
+Now copy the code to the RIOT/examples Directory. 
 
+```ruby
+   username@grenoble:~/RIOT/examples/" "
+```
+> Note: you will also put the folder everywhere you want, but you must be careful to edit the Makefile correctly by entering the correct path to the RIOT folder. Therefore modify this line in the Makefile:
+
+```ruby
+
+RIOTBASE ?= $(CURDIR)/../..
+
+```
 </details>
 
 
