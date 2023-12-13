@@ -15,7 +15,7 @@ This project was created as part of the first mini-project assignment for the In
 
 ## Requirements
 
-- FIT-IOT-Lab Account
+- FIT-IOT-LAB Account
 
 - AWS Account
 
