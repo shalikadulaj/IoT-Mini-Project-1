@@ -106,16 +106,15 @@ local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.inf
 
 <details>
 
-<summary> 1. Build Firmwares Sensor nodes and Border router </summary>
+<summary> 1. logged in to FIT IOT-LAB and ssh to the Grenoble site. </summary>
 
-#### logged in to FIT IOT-LAB and ssh to the Grenoble site. 
 
 > Note: we recommend that you use Grenoble for this experiment as we are using A8-M3 nodes and there are plenty of boards available.
   
-Connect to the SSH frontend of the Saclay site of FIT/IoT-LAB by using the username you created when you registered with the testbed:
+Connect to the SSH frontend of the grenoble site of FIT/IoT-LAB by using the username you created when you registered with the testbed:
 
 ```ruby
-   your_computer:~$ ssh <username>@saclay.iot-lab.info
+   your_computer:~$ ssh <username>@grenoble.iot-lab.info
 ```
 
 </details>
