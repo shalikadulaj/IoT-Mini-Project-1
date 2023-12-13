@@ -71,11 +71,7 @@ Follow the below steps to create a thing
 
 Finally, you must download the device certificate, key files, and Root CA Certificates. These certificates should be added to the code. It is mentioned in the code, that you can replace the certificates with yours's. 
 
-<div align="center">
-	
-![3](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/df5bf67f-3725-4837-8467-de4bcd8478ba)
 
-</div>
 As well as need to add the End point to the code. You can get the Endpoint from the below path 
 
 	AWS IoT  > Settings > Device data endpoint 
