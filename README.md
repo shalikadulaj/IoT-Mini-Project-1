@@ -269,7 +269,7 @@ root@node-a8-2:~# broker_mqtts config.conf
 
 <summary>STEP 7. Install the AWS IoT Device SDK for Python </summary>
 
-Run the following commands to install the AWS IoT Device SDK for Python:
+Run the following commands in a New Terminal to install the AWS IoT Device SDK for Python:
 
 ```ruby
    cd ~
