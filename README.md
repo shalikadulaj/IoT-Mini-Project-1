@@ -104,9 +104,21 @@ local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.inf
 
 ## Getting Started 
 
-### Setup RIOT OS 
+<details>
 
-AWS IoT > Test > MQTT test client > Subscribe to a topic (sensor/station1) > Subscribe 
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section. 
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+
+</details>
 
 
 
