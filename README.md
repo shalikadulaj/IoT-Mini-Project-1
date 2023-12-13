@@ -44,7 +44,7 @@ To make the sensor layer more efficient we are considering implementing/will imp
 
 * Implementing multi-threading to periodically read sensor data.
 * Utilizing a sleep mode during idle periods to conserve power.
-* Employing the I2C low-power bus for efficient retrieval of embedded sensor data.
+* I2C low-power bus for efficient retrieval of embedded sensor data.
 * Implementing the functionality to save data in FLASH memory (yet to be implemented).
   
 
