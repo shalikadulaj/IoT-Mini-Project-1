@@ -177,6 +177,7 @@ Use the CLI-Tools to flash the gnrc_border_router firmware that you have just bu
 Now you can configure the network of the border router on m3-1 and propagate an IPv6 prefix with ethos_uhcpd.py
 
 ```ruby
+username@grenoble:~/RIOT/$ cd
 username@grenoble:~$ sudo ethos_uhcpd.py m3-1 tap0 2001:660:5307:3100::1/64
 ```
 The network is finally configured:
