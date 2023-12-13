@@ -105,7 +105,7 @@ First you need to add rules. Follow below steps to add rules
 - Configure SQL statement 
 	- Write this quarry to select all the data coming from the topic, and ingest to the timestream. 
 
-	SELECT temperature,pressure,lightLevel FROM 'sensor/station1'    
+			SELECT temperature,pressure,lightLevel FROM 'sensor/station1'    
 
 - Attach rule actions - This is the action when receiving data. 
 	- Select - “Timestream table (write message into a Timestream table)” 
@@ -142,7 +142,7 @@ You can create the workspace as below
 
 	Amazon Managed Grafana > All workspaces > Select workspace created above > Authentication > Assign new user or group > Select User > Make admin 
 
-If you cant find user you have to add a using below method 
+If you cant find user, you have to add a user by below method 
 
 	IAM Identity Center > Users >  Add user (giving email and other information) 
 
@@ -157,7 +157,7 @@ Sign in with AWS SSO
 
 	Add Data Source > Select Amazon Timestream > Select default region (should be equal to Endpoint region) 
 
-Add data base, table and measure. Then save 
+Add data base, table and measure. Then save.
 
 Now you are successfully connected the data source. Then using dashboard, you can create a dashboard as you need. 
 
