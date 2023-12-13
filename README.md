@@ -151,6 +151,8 @@ Now copy the code to the RIOT/examples Directory.
 
 You can find more about CLI tools [here](https://www.iot-lab.info/legacy/tutorials/iotlab-experimenttools-client/index.html)
 
+Open a New terminal and execute the following:
+
 ```ruby
    username@grenoble:~$ iotlab-auth -u <username>
    username@grenoble:~$ iotlab-experiment submit -n riot_mqtt -d 60 -l 2,archi=m3:at86rf231+site=grenoble -l 1,archi=a8:at86rf231+site=grenoble
@@ -168,6 +170,7 @@ Build the gnrc_border_router firmware with the appropriate baud rate for M3 node
 The border firmware is built using the RIOT [gnrc_border_router example](https://www.iot-lab.info/learn/tutorials/riot/riot-public-ipv6-m3/).
 
 ```ruby
+ username@grenoble:~$ cd RIOT
  username@grenoble:~/RIOT/$ source /opt/riot.source
  username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=<channel> BOARD=iotlab-m3 -C examples/gnrc_border_router clean all
 ```
