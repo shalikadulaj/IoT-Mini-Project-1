@@ -158,13 +158,13 @@ You can create the workspace as below
 
 **Creating user**
 
-	Amazon Managed Grafana > All workspaces > Select workspace created above > Authentication > Assign new user or group > Select User > Make admin 
+	Amazon Managed Grafana > All workspaces > Select workspace created above > Authentication > Assign new user or group > Select User > Action > Make admin 
 
-If you cant find user, you have to add a user by below method 
+If you can't find a user, you have to add a user by below method 
 
 	IAM Identity Center > Users >  Add user (giving email and other information) 
 
-After adding you can see the user under configure users in your workspace 
+After adding you can see the user under "configure users" in your workspace 
  
 
 Loging to Grafana workspace 
