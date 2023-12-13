@@ -1,7 +1,7 @@
 # :octocat: IoT-Mini-Project-1
 ---
 
-Edit a file config.conf (vim config.conf) with the following content:
+
 
 
 ## Introduction
