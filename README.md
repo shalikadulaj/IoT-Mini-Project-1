@@ -10,7 +10,8 @@
 
 ## Introduction
 
-This project was created as part of the first mini-project assignment for the Internet of Things course at the University of Oulu. The primary goal of this assignment is to establish an IoT pipeline for retrieving temperature, atmospheric pressure, and lux level data from a remote location, and then visualize it using AWS IoT Core.
+This project was created as part of the first mini-project assignment for the Internet of Things course at the University of Oulu. The primary goal of 
+this assignment is to establish an IoT pipeline for retrieving temperature, atmospheric pressure, and lux level data from a remote location, and then visualize it using AWS IoT Core.
 
 
 ## Requirements
@@ -25,10 +26,12 @@ This project was created as part of the first mini-project assignment for the In
 
 ## Sensing Layer
 
-In this implementation, we utilized the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller for capturing temperature, atmospheric pressure, and LUX level data. The FIT IOT-LAB M3 is built on an STM32 (ARM Cortex M3) microcontroller, featuring an ATMEL radio interface operating at 2.4 GHz, and equipped with four sensors.
+In this implementation, we utilized the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller for capturing temperature, atmospheric pressure, and LUX level data. 
+
+The FIT IOT-LAB M3 is built on an STM32 (ARM Cortex M3) microcontroller, featuring an ATMEL radio interface operating at 2.4 GHz, and equipped with four sensors.
 
 ### Sensors
-4 sensors connected to the MCU via the I2C bus are embedded into the IoT-LAB M3 board:
+Four sensors connected to the MCU via the I2C bus are embedded into the IoT-LAB M3 board:
 
 - the light sensor: this measures ambient light intensity in lux.  [ISL29020](https://www.iot-lab.info/assets/misc/docs/iot-lab-m3/ISL29020.pdf)
 - the pressure and temperature sensor: this measures atmospheric pressure in hPa.  [LPS331AP](https://www.iot-lab.info/assets/misc/docs/iot-lab-m3/LPS331AP.pdf)
