@@ -65,9 +65,7 @@ FIT IOT-LAB provides a pool of IPV6/64 addresses per site that can be used to bu
 
 ![Screenshot 2023-12-13 at 17 17 34](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/b9aaf43d-ca39-4287-b6b7-cdf43b4b8663)
 
-
-
-#### MQTT
+### MQTT
 
 Since we are using AWS-IOT core to store and visualize the data, we decided to use the MQTT/MQTT-SN protocol. 
 MQTT stands for "Message Queuing Telemetry Transport" and was built by IBM. it is a lightweight and widely adopted messaging protocol specially designed for low-power IoT devices. MQTT is useful when streaming data or event-based data. the main advantage of this protocol is that it consumes very little power when sending payloads.
