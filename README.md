@@ -25,7 +25,7 @@ This project was created as part of the first mini-project assignment for the In
 
 ## Sensing Layer
 
-For this implementation, we have used the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller to read Temperature, Atmospheric Pressure, and LUX level. FIT IOT-LAB M3 is based on an STM32 (ARM Cortex M3) microcontroller controller with an ATMEL radio interface in 2.4 GHz and 4 sensors.
+In this implementation, we utilized the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller for capturing temperature, atmospheric pressure, and LUX level data. The FIT IOT-LAB M3 is built on an STM32 (ARM Cortex M3) microcontroller, featuring an ATMEL radio interface operating at 2.4 GHz, and equipped with four sensors.
 
 ### Sensors
 4 sensors connected to the MCU via the I2C bus are embedded into the IoT-LAB M3 board:
@@ -33,11 +33,20 @@ For this implementation, we have used the FIT [IOT-LAB M3](https://www.iot-lab.i
 - the light sensor: this measures ambient light intensity in lux.  [ISL29020](https://www.iot-lab.info/assets/misc/docs/iot-lab-m3/ISL29020.pdf)
 - the pressure and temperature sensor: this measures atmospheric pressure in hPa.  [LPS331AP](https://www.iot-lab.info/assets/misc/docs/iot-lab-m3/LPS331AP.pdf)
 - the accelerometer/magnetometer: this provides feedback on an object’s acceleration, and can be used to detect movement. By determining a threshold, 
-  it generates a change of state on one of the MCU’s digital inputs/outputs in order to create an interrupt, which can be used to bring the MCU out of 
+  it generates a state change on one of the MCU’s digital inputs/outputs to create an interrupt, which can be used to bring the MCU out of 
   standby mode.  [LSM303DLHC](https://www.iot-lab.info/assets/misc/docs/iot-lab-m3/LSM303DLHC.pdf)
 - the gyroscope: this measures the orientation of an object in space and can be used, for example, to determine the orientation of the screen of a 
   tablet or a smartphone.  [L3G4200D](https://www.iot-lab.info/assets/misc/docs/iot-lab-m3/L3G4200D.pdf)
 
+Given our emphasis on weather data measurement, our implementation exclusively incorporates the ISL29020 sensor for reading lux levels and the LPS331AP sensor for capturing temperature and atmospheric pressure.
+
+To make the sensor layer more efficient we are considering implementing/will implement the following
+
+* Implementing multi-threading to periodically read sensor data.
+* Utilizing a sleep mode during idle periods to conserve power.
+* Employing the I2C low-power bus for efficient retrieval of embedded sensor data.
+* Implementing the functionality to save data in FLASH memory (yet to be implemented).
+  
 
 
 
