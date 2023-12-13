@@ -197,7 +197,10 @@ Amazon Simple Notification Service (SNS) is a fully managed messaging service by
 
 Here rules are set for triggering email alerts using the AWS SNS service. Write SQL quarries to trigger AWS SNS 
 
-![4](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/6e768cf1-1fcb-4dbf-bcbf-20e927bce478)
+<div align="center">
+  <img src=![4](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/6e768cf1-1fcb-4dbf-bcbf-20e927bce478)
+ alt="Image Alt Text" width="400" />
+</div>
 
 
 
