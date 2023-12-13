@@ -85,7 +85,6 @@ MQTT has a publisher-subscriber model and supports many-to-many communication. T
 
 Clients can publish messages on a topic to the broker. The subscribing client can fetch messages from that topic through the broker. Thus the broker decouples the publisher and the subscriber. The broker is responsible for receiving all messages, filtering the messages, determining who is subscribed to each message, and sending the message to these subscribed clients.
 
-we will a 
 
 <div align="center">
 
