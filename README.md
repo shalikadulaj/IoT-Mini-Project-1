@@ -217,3 +217,27 @@ AWS DynamoDB, a fully managed NoSQL database, we are using this for storing aler
 
 
 
+
+:star: Star this repository
+:fire: Hot feature
+:bug: Bug fix
+:new: New feature
+:art: Improving structure / format
+:zap: Improving performance
+:up: Updating dependencies
+:tada: Initial commit
+:bookmark: Version tagging
+:construction: Work in progress
+:rocket: Deploying stuff
+:page_facing_up: Adding or updating license
+:twisted_rightwards_arrows: Merging branches
+:white_check_mark: Adding tests
+:lipstick: Updating the UI and style files
+:wrench: Changing configuration files
+:package: Updating compiled files or packages
+:alien: Updating code due to external API changes
+:truck: Moving or renaming files
+:recycle: Refactoring code
+:bulb: Documenting source code
+:octocat: GitHub-specific emoji
+
