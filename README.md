@@ -106,6 +106,8 @@ local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.inf
 
 ### Setup RIOT OS 
 
+> type here
+
 
 
 ## Data Management and Visualization
