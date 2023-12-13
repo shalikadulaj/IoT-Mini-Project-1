@@ -115,7 +115,7 @@ local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.inf
 Connect to the SSH frontend of the Grenoble site of FIT/IoT-LAB by using the username you created when you registered with the testbed:
 
 ```ruby
-   your_computer:~$ ssh <username>@grenoble.iot-lab.info
+   ssh <username>@grenoble.iot-lab.info
 ```
 #### Clone the RIOT OS repository from GitHub:
 
