@@ -262,8 +262,23 @@ root@node-a8-1:~# broker_mqtts config.conf
 20170715 001526.111 CWNAN0300I MQTT-S protocol starting, listening on port 1885
 20170715 001526.115 CWNAN0014I MQTT protocol starting, listening on port 1886
 
+```
+Open the Sensor Node m3-2 terminal and check the Global IP is obtained from the border router subnet.
+
+```ruby
+ nc m3-2 20000
+ ifconfig
+ Add global address of the node
+
 
 ```
+if you see the global ipv6 prefix address configured then start the communication with MQTTs broker by executing the following command in the node shell.
+```ruby
+ nc m3-2 20000
+ start start fec0:affe::1 1885 station1
+ 
+```
+
 </details>
 <details>
 
