@@ -203,7 +203,7 @@ net.ipv6.conf.tap0.accept_ra = 0
 Now, in another terminal, SSH to the SSH frontend and build the required firmware for the other node.
 
 ```ruby
-    username@grenoble:~$ cd RIOT
+   username@grenoble:~$ cd RIOT
    username@grenoble:~/RIOT/$ source /opt/riot.source
    username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=11 BOARD=iotlab-m3 -C examples/IoT-Mini-Project-1 clean all
 ```
@@ -314,8 +314,8 @@ root@node-a8-1:~# broker_mqtts config.conf
 
 if you see the global ipv6 prefix address configured then start the communication with MQTTs broker by executing the following command in the node shell.
 ```ruby
- nc m3-2 20000
- start start fec0:affe::1 1885 station1
+ username@grenoble:~/RIOT$ nc m3-102 20000
+ start 2001:660:5307:3000::67 1885 station1
  
 ```
 
