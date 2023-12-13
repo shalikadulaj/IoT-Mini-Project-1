@@ -18,8 +18,9 @@ this assignment is to establish an IoT pipeline for retrieving temperature, atmo
 - we have used [FIT IOT-LAB](https://www.iot-lab.info/) to use real sensors and microcontrollers to retrieve data and forward them to a cloud platform. FIT IOT-LAB platform provides numerous boards,  open-source libraries, packages, and drivers to experiment with various IoT projects. 
 
 - For the data  management and visualization we have  used the [AWS-IOT](https://aws.amazon.com/iot-core/?c=i&sec=srv) free credit version. with the free credit version, you will get
-  Amazon SNS, Amazon Grafana and DynamoDB tools to play around with your data.
+  Amazon SNS, Amazon Grafana, and DynamoDB tools to play around with your data.
 
+the following image will give you an overview of this implementation. 
 
 
 ![WhatsApp Image 2023-12-13 at 3 51 13 PM](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/10e27532-5c5a-49d5-b255-99ec27a17873)
