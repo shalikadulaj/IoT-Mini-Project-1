@@ -23,18 +23,9 @@ This project was created as part of the first mini-project assignment for the In
 ![WhatsApp Image 2023-12-13 at 3 51 13 PM](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/10e27532-5c5a-49d5-b255-99ec27a17873)
 
 
-# Sensor Reading
+## Sensing Layer
 
-## add some debug output
-trace_output protocol
-   
-## listen for MQTT-SN traffic on UDP port 1885
-listener 1885 INADDR_ANY mqtts
-  ipv6 true
-   
-## listen to MQTT connections on tcp port 1886
-listener 1886 INADDR_ANY
-  ipv6 true
+### For this implementation, we have used the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller to read Temperature, Atmospheric Pressure, and LUX level. 
 
 ## Network Layer 
 
