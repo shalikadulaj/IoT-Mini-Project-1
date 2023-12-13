@@ -256,7 +256,7 @@ Iface  5  HWaddr: 35:3F  Channel: 11  NID: 0x23  PHY: O-QPSK
 
 
 ```
-
+Leave the Terminal Open. Do not close the Shell.
 </details>
 
 <details>
