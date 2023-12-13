@@ -52,6 +52,12 @@ To make the sensor layer more efficient we are considering implementing/will imp
 
 ## Network Layer 
 
+### Border Router
+
+A broader router is used to propagate public IPv6 addresses across the local network, facilitating the connection between the FIT IOT-LAB M3 sensor node and AWS services. In the assignment, we have used the [Border-router](https://www.iot-lab.info/learn/tutorials/riot/riot-public-ipv6-m3/) example provided by the FIT IOT-LAB.
+
+### MQTTSN broker and MQTTSN Client
+
 
 ## :cloud: AWS 
 
