@@ -266,6 +266,27 @@ root@node-a8-2:~# broker_mqtts config.conf
 ```
 </details>
 
+<details>
+
+<summary>STEP 7. Start MQTTSN Client </summary>
+
+you can run this Python bridge in the same a8-1 device in a separate SSH window.
+
+in another terminal, log on to the remaining A8 node, node-a8-1.
+
+```ruby
+   my_computer$ ssh <login>@grenoble.iot-lab.info
+   login@grenoble:~$ ssh root@node-a8-1
+```
+Now locate the MQTTSbridge.py 
+
+```ruby
+   username@grenoble:~$ cd RIOT/examples/MQTTSbridge.py
+   username@grenoble:~/RIOT/examples/$ python3 MQTTSbridge.py
+```
+
+</details>
+
 ## Data Management and Visualization
 
 ## :cloud: AWS 
