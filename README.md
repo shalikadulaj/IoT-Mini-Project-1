@@ -33,7 +33,7 @@ listener 1886 INADDR_ANY
 ## Network Layer 
 
 
-## :star: AWS 
+## :cloud: AWS 
 
 Amazon Web Services (AWS) is a leading cloud platform offering a comprehensive suite of services for data storage, visualization, and alerting. 
 
