@@ -27,9 +27,13 @@ the following image will give you an overview of this implementation.
 
 This project is divided into three main layers. the main objective is to achieve the maximum efficiency, power consumption, and reliability of each layer.
 
+* Sensing
+* Network Layer
+* Data Management 
+
 ## Sensing Layer
 
-In this implementation, we utilized the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller for capturing temperature, atmospheric pressure, and LUX level data. 
+In this implementation, we utilized the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller for capturing temperature, atmospheric pressure, and LUX level data. (IOT-LAB node m3-1)
 
 The FIT IOT-LAB M3 is built on an STM32 (ARM Cortex M3) microcontroller, featuring an ATMEL radio interface operating at 2.4 GHz, and equipped with four sensors.
 
@@ -58,7 +62,7 @@ To make the sensor layer more efficient we are considering implementing/will imp
 
 ### * Border Router
 
-A broader router is used to propagate public IPv6 addresses across the local network, facilitating the connection between the FIT IOT-LAB M3 sensor node and AWS services. In the assignment, we have used the [Border-router](https://www.iot-lab.info/learn/tutorials/riot/riot-public-ipv6-m3/) example provided by the FIT IOT-LAB. In this project, we are using a separate FIT IOT-LAB-M3 board for the border router setup.
+A broader router is used to propagate public IPv6 addresses across the local network, facilitating the connection between the FIT IOT-LAB M3 sensor node and AWS services. In the assignment, we have used the [Border-router](https://www.iot-lab.info/learn/tutorials/riot/riot-public-ipv6-m3/) example provided by the FIT IOT-LAB. In this project, we are using a separate FIT IOT-LAB-M3 board for the border router setup. ( IOT-LAB node m3-2)
 
 ![Screenshot 2023-12-13 at 17 15 30](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/ccf00e39-a42f-46b4-902c-ee3c116c1a1b)
 
@@ -75,11 +79,13 @@ MQTT stands for "Message Queuing Telemetry Transport" and was built by IBM. it i
 
 MQTT has a publisher-subscriber model and supports many-to-many communication. The sender and receiver of the messages are decoupled. There are two basic components in this architecture.
 
-* Client
+* Client 
 
 * Broker
 
 Clients can publish messages on a topic to the broker. The subscribing client can fetch messages from that topic through the broker. Thus the broker decouples the publisher and the subscriber. The broker is responsible for receiving all messages, filtering the messages, determining who is subscribed to each message, and sending the message to these subscribed clients.
+
+we will a 
 
 <div align="center">
 
@@ -92,6 +98,8 @@ Clients can publish messages on a topic to the broker. The subscribing client ca
 ##### * RSMB - Really Small Message Broker
 
 RSMB is a server  Implementation of the MQTT and MQTT-SN protocols. Any client that implements this protocol properly can use this server for sending and receiving messages. we used RSMB to establish the connection from the sensor node to the MQTTSN client through the border router which sends data to the AWS-IOT. [Read More](https://eclipse.dev/paho/index.php?page=components/mqtt-sn-transparent-gateway/index.php)
+
+local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.info/docs/boards/iot-lab-a8-m3/) node and the Sensor node publishes topics to port 1885. The IoT-LAB A8-M3 board is based on a TI SITARA AM3505 which is a high-performance ARM Cortex-A8 microprocessor. Its 600 MHz clock speed enables it to run an embedded Linux. RSMB needs to run as a service hence we used A8 board to serve the purpose. 
 
 
 ## Data Management and Visualization
