@@ -84,14 +84,17 @@ As well as need to add the End point to the code. You can get the Endpoint from 
 
 	AWS IoT  > Settings > Device data endpoint 
 
-At this moment you can check the data received. If not, you have to check the above steps again. To check follow the below steps. 
+At this moment you can check whether the data is receiving. If not, you have to check the above steps again. To check follow the below steps. 
 
 	AWS IoT > Test > MQTT test client > Subscribe to a topic (sensor/station1) > Subscribe 
 
-Replace the topic with your topic. Now you can see data is received below 
+Replace the topic with your topic. Now you can see the data is receiving as below. 
 
+<div align="center">
+	
+![5](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/edc49f9e-cd09-487c-ad08-107e6074c859)
 
-
+</div>
 
 
 
