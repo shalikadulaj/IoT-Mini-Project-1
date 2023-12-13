@@ -292,8 +292,8 @@ ipv6 true
 Important, note the global IPv6 address of this node, since we’ll use it to connect to the MQTT broker from the node:
 ```ruby
 root@node-a8-1:~# ip -6 -o addr show eth0
-2: eth0    inet6 2001:660:3207:400::66/64 scope global        valid_lft forever preferred_lft forever
-2: eth0    inet6 fe80::fadc:7aff:fe01:98fc/64 scope link        valid_lft forever preferred_lft forever
+2: eth0    inet6 2001:660:5307:3000::67/64 scope global \       valid_lft forever preferred_lft forever
+2: eth0    inet6 fe80::fadc:7aff:fe01:95f8/64 scope link \       valid_lft forever preferred_lft forever
 
 ```
 
