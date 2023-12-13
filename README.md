@@ -190,7 +190,9 @@ net.ipv6.conf.tap0.accept_ra = 0
 ----> ethos: hello reply received
 ```
 > Note 1: leave the terminal open (you don’t want to kill ethos_uhcpd.py, it bridges the BR to the front-end network)
-> Note 2: If you have an error “Invalid prefix – Network overlapping with routes”, it’s because another experiment is using the same ipv6 prefix (e.g. 2001:660:5307:3100::1/64).
+
+> Note 2: If you have an error “Invalid prefix – Network overlapping with routes”, it’s because another experiment is using the same ipv6 prefix
+> (e.g. 2001:660:5307:3100::1/64).
 
 </details>
 
