@@ -10,15 +10,14 @@
 
 ## Introduction
 
-University of Oulu,Group Project,Getting sensor data form FIT IoT Lab.
-We are only using free AWS services for this project.
+This project was created as part of the first mini-project assignment for the Internet of Things course at the University of Oulu. The primary goal of this assignment is to establish an IoT pipeline for retrieving temperature, atmospheric pressure, and lux level data from a remote location, and then visualize it using AWS IoT Core.
 
 
 ## Requirements
 
-- AWS Account
+- FIT-IOT-Lab Account
 
-- 
+- AWS Account
 
 
 ![WhatsApp Image 2023-12-13 at 3 51 13 PM](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/10e27532-5c5a-49d5-b255-99ec27a17873)
