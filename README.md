@@ -141,10 +141,39 @@ Now copy the code to the RIOT/examples Directory.
 > Note: you will also put the folder everywhere you want, but you must be careful to edit the Makefile correctly by entering the correct path to the RIOT folder. Therefore modify this line in the Makefile:
 
 ```ruby
-
-RIOTBASE ?= $(CURDIR)/../..
-
+  RIOTBASE ?= $(CURDIR)/../..
 ```
+</details>
+
+<details>
+
+<summary>STEP 3. Submit an experiment in FIT IOT-LAB Grenoble site using CLI tools </summary>
+
+You can find more about CLI tools [here](https://www.iot-lab.info/legacy/tutorials/iotlab-experimenttools-client/index.html)
+
+```ruby
+   username@grenoble:~$ iotlab-auth -u <username>
+   username@grenoble:~$ iotlab-experiment submit -n riot_mqtt -d 60 -l 2,archi=a3:at86rf231+site=grenoble -l 1,archi=a3:at86rf231+site=grenoble
+   username@grenoble:~$ iotlab-experiment wait
+```
+
+</details>
+<summary>STEP 4. Build the gnrc_border_router firmware  </summary>
+
+Build the gnrc_border_router firmware with the appropriate baud rate for M3 nodes, which is 500,000:
+
+The border firmware is built using the RIOT [gnrc_border_router example](https://www.iot-lab.info/learn/tutorials/riot/riot-public-ipv6-m3/).
+
+```ruby
+ username@grenoble:~/RIOT/$ source /opt/riot.source
+ username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=<channel> BOARD=iotlab-m3 -C examples/gnrc_border_router clean all
+```
+Use the CLI-Tools to flash the gnrc_border_router firmware that you have just built on the first M3 node. Here we use m3-1 but it may change in your case:
+```ruby
+ username@grenoble:~/RIOT/$ iotlab-node --flash examples/gnrc_border_router/bin/iotlab-m3/gnrc_border_router.elf -l saclay,m3,1
+```
+
+
 </details>
 
 
