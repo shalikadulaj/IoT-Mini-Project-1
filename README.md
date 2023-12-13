@@ -205,7 +205,7 @@ Now, in another terminal, SSH to the SSH frontend and build the required firmwar
 ```ruby
     username@grenoble:~$ cd RIOT
    username@grenoble:~/RIOT/$ source /opt/riot.source
-   username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=11 BOARD=iotlab-m3 -C examples/" " clean all
+   username@grenoble:~/RIOT/$ make ETHOS_BAUDRATE=500000 DEFAULT_CHANNEL=11 BOARD=iotlab-m3 -C examples/IoT-Mini-Project-1 clean all
 ```
 Use the CLI-Tools to flash the Sensor_Read firmware that you have just built on the first M3 node. Here we use m3-2 but it may change in your case:
 ```ruby
