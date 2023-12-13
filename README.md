@@ -251,7 +251,7 @@ root@node-a8-1:~# ip -6 -o addr show eth0
 
 start the broker: broker_mqtts config.conf
 ```ruby
-root@node-a8-2:~# broker_mqtts config.conf
+root@node-a8-1:~# broker_mqtts config.conf
 20170715 001526.077 CWNAN9999I Really Small Message Broker
 20170715 001526.084 CWNAN9998I Part of Project Mosquitto in Eclipse
 (http://projects.eclipse.org/projects/technology.mosquitto)
@@ -267,15 +267,19 @@ root@node-a8-2:~# broker_mqtts config.conf
 </details>
 <details>
 
-<summary>STEP 7. Install the AWS IoT Device SDK for Python </summary>
+<summary>STEP 7. Install the AWS IoT Device SDK for Python into a8-1 node </summary>
 
 Run the following commands in a New Terminal to install the AWS IoT Device SDK for Python:
 
 ```ruby
-   cd ~
-   git clone https://github.com/aws/aws-iot-device-sdk-python.git
-   cd aws-iot-device-sdk-python
-   python setup.py install
+   my_computer$ ssh <login>@grenoble.iot-lab.info
+  login@grenoble:~$ ssh root@node-a8-1
+```
+```ruby
+   root@node-a8-1:~# cd ~
+   root@node-a8-1:~# git clone https://github.com/aws/aws-iot-device-sdk-python.git
+   root@node-a8-1:~# cd aws-iot-device-sdk-python
+   root@node-a8-1:~# python setup.py install
 ```
 
 </details>
