@@ -198,7 +198,7 @@ net.ipv6.conf.tap0.accept_ra = 0
 
 <details>
 
-<summary>STEP 4. Build the Sensor_Read firmware </summary>
+<summary>STEP 5. Build the Sensor_Read firmware </summary>
 
 Now, in another terminal, SSH to the SSH frontend and build the required firmware for the other node.
 
@@ -213,9 +213,42 @@ Use the CLI-Tools to flash the Sensor_Read firmware that you have just built on 
 ```
 </details>
 
+<details>
 
+<summary>STEP 6. Configure and Start Mosquito.RSMB </summary>
 
+ in another terminal, log on to the remaining A8 node, node-a8-1. We are going to configure and start the MQTT-SN broker as follows:
 
+```ruby
+  my_computer$ ssh <login>@grenoble.iot-lab.info
+  login@grenoble:~$ ssh root@node-a8-1
+```
+> Note that mosquito.rsmb is pre-installed in these  A8 devices which makes it easier to configure. if it is not installed get it from [here](https://github.com/eclipse/mosquitto.rsmb).
+
+Edit a file config.conf (vim config.conf) with the following content:
+
+```ruby
+
+# add some debug output
+trace_output protocol
+   
+# listen for MQTT-SN traffic on UDP port 1885
+listener 1885 INADDR_ANY mqtts
+ipv6 true
+   
+# listen to MQTT connections on tcp port 1886
+listener 1886 INADDR_ANY
+ipv6 true
+```
+
+Important, note the global IPv6 address of this node, since we’ll use it to connect to the MQTT broker from the node:
+```ruby
+root@node-a8-2:~# ip -6 -o addr show eth0
+2: eth0    inet6 2001:660:3207:400::66/64 scope global        valid_lft forever preferred_lft forever
+2: eth0    inet6 fe80::fadc:7aff:fe01:98fc/64 scope link        valid_lft forever preferred_lft forever
+
+```
+</details>
 
 ## Data Management and Visualization
 
