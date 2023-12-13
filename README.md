@@ -104,7 +104,15 @@ AWS Timestream is a fully managed, serverless time-series database service provi
 
 **Ingesting data into Timestream**
 
-JSON values of Date and Time, Station ID, Device ID, Temperature, Pressure and Light level insert into the particular table. 
+**Sample JSON data set**
+
+{
+  "id": "0",
+  "datetime": "2023-12-13 03:55:20",
+  "temperature": "-12",
+  "pressure": "345",
+  "lightLevel": "38"
+}
 
 First you need to add rules. Follow below steps to add rules 
 
