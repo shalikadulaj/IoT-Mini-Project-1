@@ -243,9 +243,25 @@ ipv6 true
 
 Important, note the global IPv6 address of this node, since we’ll use it to connect to the MQTT broker from the node:
 ```ruby
-root@node-a8-2:~# ip -6 -o addr show eth0
+root@node-a8-1:~# ip -6 -o addr show eth0
 2: eth0    inet6 2001:660:3207:400::66/64 scope global        valid_lft forever preferred_lft forever
 2: eth0    inet6 fe80::fadc:7aff:fe01:98fc/64 scope link        valid_lft forever preferred_lft forever
+
+```
+
+start the broker: broker_mqtts config.conf
+```ruby
+root@node-a8-2:~# broker_mqtts config.conf
+20170715 001526.077 CWNAN9999I Really Small Message Broker
+20170715 001526.084 CWNAN9998I Part of Project Mosquitto in Eclipse
+(http://projects.eclipse.org/projects/technology.mosquitto)
+20170715 001526.088 CWNAN0049I Configuration file name is config.conf
+20170715 001526.099 CWNAN0053I Version 1.3.0.2, Jul 11 2017 14:55:20
+20170715 001526.102 CWNAN0054I Features included: bridge MQTTS 
+20170715 001526.104 CWNAN9993I Authors: Ian Craggs (icraggs@uk.ibm.com), Nicholas O'Leary
+20170715 001526.111 CWNAN0300I MQTT-S protocol starting, listening on port 1885
+20170715 001526.115 CWNAN0014I MQTT protocol starting, listening on port 1886
+
 
 ```
 </details>
