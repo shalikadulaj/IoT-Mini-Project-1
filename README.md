@@ -265,10 +265,24 @@ root@node-a8-2:~# broker_mqtts config.conf
 
 ```
 </details>
+<details>
+
+<summary>STEP 7. Install the AWS IoT Device SDK for Python </summary>
+
+Run the following commands to install the AWS IoT Device SDK for Python:
+
+```ruby
+   cd ~
+   git clone https://github.com/aws/aws-iot-device-sdk-python.git
+   cd aws-iot-device-sdk-python
+   python setup.py install
+```
+
+</details>
 
 <details>
 
-<summary>STEP 7. Start MQTTSN Client </summary>
+<summary>STEP 8. Start MQTTSN Client </summary>
 
 you can run this Python bridge in the same a8-1 device in a separate SSH window.
 
@@ -278,8 +292,23 @@ in another terminal, log on to the remaining A8 node, node-a8-1.
    my_computer$ ssh <login>@grenoble.iot-lab.info
    login@grenoble:~$ ssh root@node-a8-1
 ```
-Now locate the MQTTSbridge.py 
+Now locate the MQTTSbridge.py. 
 
+before you run the Python script make sure you have set the aws certificates correctly. 
+
+path that indicates the certificates position (ssh root@node-a8-?)
+
+```ruby
+#path that indicates the certificates position (ssh root@node-a8-?)
+path = "/home/root/../certs/"
+
+# configure the access with the AWS MQTT broker
+MQTTClient.configureEndpoint("", 8883)
+MQTTClient.configureCredentials(path+"",
+                                path+"",
+                                path+"")
+
+```
 ```ruby
    username@grenoble:~$ cd RIOT/examples/MQTTSbridge.py
    username@grenoble:~/RIOT/examples/$ python3 MQTTSbridge.py
