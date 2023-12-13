@@ -183,7 +183,7 @@ Sign in with AWS SSO
 
 Add data base, table and measure. Then save.
 
-Now you are successfully connected the data source. Then using dashboard, you can create a dashboard as you need. 
+Now you are successfully connected the data source. Then using Grafana, you can create a dashboard as you need. 
 
 
 
@@ -231,9 +231,8 @@ Here rules are set for triggering email alerts using the AWS SNS service. Write 
 
 ## AWS Dynamodb
 
-AWS DynamoDB, a fully managed NoSQL database, we are using this for storing alert data. With seamless scalability and low-latency access, DynamoDB ensures reliable and fast retrieval of alert information. Its flexible schema accommodates evolving data needs, making it a robust solution for storing and retrieving dynamic alert data. 
 
- AWS DynamoDB, a fully managed NoSQL database, we are using this for storing alert data. With seamless scalability and low-latency access, DynamoDB ensures reliable and fast retrieval of alert information. Its flexible schema accommodates evolving data needs, making it a robust solution for storing and retrieving dynamic alert data. 
+AWS DynamoDB, a fully managed NoSQL database, we are using this for storing alert data. With seamless scalability and low-latency access, DynamoDB ensures reliable and fast retrieval of alert information. Its flexible schema accommodates evolving data needs, making it a robust solution for storing and retrieving dynamic alert data. 
 
 **Create rule for ingesting alert data into dynamoDB**
 
