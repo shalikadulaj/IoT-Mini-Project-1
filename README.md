@@ -106,16 +106,14 @@ local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.inf
 
 <details>
 
-<summary>Tips for collapsed sections</summary>
+<summary> 1. Setup RIOT </summary>
 
-### You can add a header
-
-You can add text within a collapsed section. 
-
-You can add an image or a code block, too.
+### Download the code from here 
+  
+Connect to the SSH frontend of the Saclay site of FIT/IoT-LAB by using the username you created when you registered with the testbed:
 
 ```ruby
-   puts "Hello World"
+   your_computer:~$ ssh <username>@saclay.iot-lab.info
 ```
 
 </details>
