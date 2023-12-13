@@ -104,7 +104,7 @@ AWS Timestream is a fully managed, serverless time-series database service provi
 
 **Ingesting data into Timestream**
 
-**Sample JSON data set**
+Sample JSON data set
 
 	{
 	  "id": "0",
