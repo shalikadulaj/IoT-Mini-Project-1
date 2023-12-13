@@ -25,7 +25,7 @@ the following image will give you an overview of this implementation.
 
 ![WhatsApp Image 2023-12-13 at 3 51 13 PM](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/10e27532-5c5a-49d5-b255-99ec27a17873)
 
-This project is divided into three main layers. the main objective is to achieve the maximum efficiency, power consumption, and realizability of each layer.
+This project is divided into three main layers. the main objective is to achieve the maximum efficiency, power consumption, and reliability of each layer.
 
 ## Sensing Layer
 
