@@ -15,7 +15,9 @@ this assignment is to establish an IoT pipeline for retrieving temperature, atmo
 
 ## Tools and Requirement
 
-- we have used [FIT IOT-LAB](https://www.iot-lab.info/) to use real sensors and microcontrollers to retrieve data and forward them to a cloud platform. FIT IOT-LAB platform provides numerous boards,  open-source libraries, packages, and drivers to experiment with various IoT projects. 
+- we have used [FIT IOT-LAB](https://www.iot-lab.info/) to use real sensors and microcontrollers to retrieve data and forward them to a cloud platform. FIT IOT-LAB platform provides numerous boards,  open-source libraries, packages, and drivers to experiment with various IoT projects.
+  
+- [RIOT](https://doc.riot-os.org/index.html) - RIOT is an open-source microkernel-based operating system, designed to match the requirements of Internet of Things (IoT) devices and other embedded devices. we will use RIOT to build firmware for our low-end devices ( sensors & border router).
 
 - For the data  management and visualization we have  used the [AWS-IOT](https://aws.amazon.com/iot-core/?c=i&sec=srv) free credit version. with the free credit version, you will get
   Amazon SNS, Amazon Grafana, and DynamoDB tools to play around with your data.
@@ -101,6 +103,8 @@ RSMB is a server  Implementation of the MQTT and MQTT-SN protocols. Any client t
 local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.info/docs/boards/iot-lab-a8-m3/) node and the Sensor node publishes topics to port 1885. The IoT-LAB A8-M3 board is based on a TI SITARA AM3505 which is a high-performance ARM Cortex-A8 microprocessor. Its 600 MHz clock speed enables it to run an embedded Linux. RSMB needs to run as a service hence we used A8 board to serve the purpose. 
 
 ## Getting Started 
+
+### Setup RIOT OS
 
 
 
