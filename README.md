@@ -147,7 +147,7 @@ Now copy the code to the RIOT/examples Directory.
 
 <details>
 
-<summary>STEP 3. Submit an experiment in FIT IOT-LAB Grenoble site using CLI tools </summary>
+<summary> STEP 3. Submit an experiment in FIT IOT-LAB Grenoble site using CLI tools </summary>
 
 You can find more about CLI tools [here](https://www.iot-lab.info/legacy/tutorials/iotlab-experimenttools-client/index.html)
 
@@ -158,7 +158,10 @@ You can find more about CLI tools [here](https://www.iot-lab.info/legacy/tutoria
 ```
 
 </details>
-<summary>STEP 4. Build the gnrc_border_router firmware  </summary>
+
+<details>
+
+<summary> STEP 4. Build the gnrc_border_router firmware  </summary>
 
 Build the gnrc_border_router firmware with the appropriate baud rate for M3 nodes, which is 500,000:
 
@@ -188,6 +191,7 @@ net.ipv6.conf.tap0.accept_ra = 0
 ```
 > Note 1: leave the terminal open (you don’t want to kill ethos_uhcpd.py, it bridges the BR to the front-end network)
 > Note 2: If you have an error “Invalid prefix – Network overlapping with routes”, it’s because another experiment is using the same ipv6 prefix (e.g. 2001:660:5307:3100::1/64).
+
 </details>
 
 
