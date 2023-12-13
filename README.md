@@ -57,7 +57,11 @@ https://docs.aws.amazon.com/iot/
 
 
 </div>
+
 The border router publishes sensor data from FIT IoT Lab to the specific topic in AWS IoT core. There are rules to control data, which receive to the IoT core.  
+
+
+
 
 
 
@@ -102,7 +106,7 @@ Replace the topic with your topic. Now you can see the data is receiving as belo
 
 ## AWS Timestream 
 
-AWS Timestream is a fully managed, serverless time-series database service provided by Amazon Web Services (AWS). It is specifically designed to handle time-series data at scale. Time-series data is characterized by data points associated with timestamps. In this project Data from the IoT core is ingested into the AWS Timestream database using AWS rules. 
+AWS Timestream is a fully managed, serverless time-series database service provided by Amazon Web Services (AWS). It is specifically designed to handle time-series data at scale. Time-series data is characterized by data points associated with timestamps. In this project, the data from the IoT core is ingested into the AWS Timestream database using AWS rules. 
 
 **Ingesting data into Timestream**
 
@@ -116,7 +120,7 @@ Sample JSON data set
 	  "lightLevel": "38"
 	}
 
-First you need to add rules. Follow below steps to add rules 
+First, you need to add rules. Follow below steps to add rules 
 
 	AWS IoT > Message Routing > Rules > Create rule 
 
@@ -129,8 +133,8 @@ First you need to add rules. Follow below steps to add rules
 
 - Attach rule actions - This is the action when receiving data. 
 	- Select - “Timestream table (write message into a Timestream table)” 
-	- Add database - If you have not created database you can create a database by clicking 		on “Create Telestream database”. Select standard database. 
-	- Add Table – Click on create Timestream table 
+	- Add database - If you have not created a database, you can create a database by clicking on “Create Timetream database”. Select standard database. 
+	- Add Table – Click on create timestream table 
 	- Add a IAM role – Click on create new role 
 
 - Review and create 
