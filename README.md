@@ -59,6 +59,8 @@ https://docs.aws.amazon.com/iot/
 </div>
 The border router publishes sensor data from FIT IoT Lab to the specific topic in AWS IoT core. There are rules to control data, which receive to the IoT core.  
 
+
+
 **Create a thing**
 
 A thing resource is a digital representation of a physical device or logical entity in AWS IoT. Your device or entity needs a thing resource in the registry to use AWS IoT features such as Device Shadows, events, jobs, and device management features. 
