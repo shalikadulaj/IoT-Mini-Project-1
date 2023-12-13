@@ -123,7 +123,7 @@ First you need to add rules. Follow below steps to add rules
 - Configure SQL statement 
 	- Write this quarry to select all the data coming from the topic, and ingest to the timestream. 
 
-			SELECT temperature,pressure,lightLevel FROM 'sensor/station1'    
+			SELECT * FROM 'sensor/station1'   
 
 - Attach rule actions - This is the action when receiving data. 
 	- Select - “Timestream table (write message into a Timestream table)” 
