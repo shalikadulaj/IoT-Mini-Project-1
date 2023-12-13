@@ -77,9 +77,9 @@ MQTT has a publisher-subscriber model and supports many-to-many communication. T
 * Broker
 
 Clients can publish messages on a topic to the broker. The subscribing client can fetch messages from that topic through the broker. Thus the broker decouples the publisher and the subscriber. The broker is responsible for receiving all messages, filtering the messages, determining who is subscribed to each message, and sending the message to these subscribed clients.
-<div align="center">
+
 ![Screenshot 2023-12-13 at 17 18 16](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/3bbdb3a3-970f-46b9-8829-fb951fec3994)
-</div>
+
 ##### RSMB - Really Small Message Broker
 
 RSMB is a server  Implementation of the MQTT and MQTT-SN protocols. Any client that implements this protocol properly can use this server for sending and receiving messages. we used RSMB to establish the connection to the MQTTSN client which sends data to the AWS-IOT. [Read More](https://eclipse.dev/paho/index.php?page=components/mqtt-sn-transparent-gateway/index.php)
