@@ -57,7 +57,7 @@ https://docs.aws.amazon.com/iot/
 
 
 </div>
-The border router publishes sensor data from FIT IoT Lab to the specific topic in AWS IoT core. There are rules to control data received to the IoT core.  
+The border router publishes sensor data from FIT IoT Lab to the specific topic in AWS IoT core. There are rules to control data, which receive to the IoT core.  
 
 **Create a thing**
 
