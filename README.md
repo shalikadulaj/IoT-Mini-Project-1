@@ -315,7 +315,7 @@ root@node-a8-1:~# broker_mqtts config.conf
 if you see the global ipv6 prefix address configured then start the communication with MQTTs broker by executing the following command in the node shell.
 ```ruby
  username@grenoble:~/RIOT$ nc m3-102 20000
- start 2001:660:5307:3000::67 1885 station1
+ >start 2001:660:5307:3000::67 1885 station1
  
 ```
 
