@@ -1,7 +1,11 @@
 # :octocat: IoT-Mini-Project-1
 ---
 
+### Group Members
 
+Shalika Dulaj
+Ana Ferreira
+Kavinda Rathnayaka
 
 
 ## Introduction
