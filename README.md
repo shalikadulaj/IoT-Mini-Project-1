@@ -11,14 +11,15 @@
 ## Introduction
 
 This project was created as part of the first mini-project assignment for the Internet of Things course at the University of Oulu. The primary goal of 
-this assignment is to establish an IoT pipeline for retrieving temperature, atmospheric pressure, and lux level data from a remote location, and then visualize it using AWS IoT Core.
+this assignment is to establish an IoT pipeline for retrieving temperature, atmospheric pressure, and lux level data from a low-end device in a remote location, and then storing, processing, and visualizing in the cloud platform.
 
+## Tools and Requirement
 
-## Requirements
+- we have used [FIT IOT-LAB](https://www.iot-lab.info/) to use real sensors and microcontrollers to retrieve data and forward them to a cloud platform. FIT IOT-LAB platform provides numerous boards,  open-source libraries, packages, and drivers to experiment with various IoT projects. 
 
-- FIT-IOT-LAB Account
+- For the data  management and visualization we have  used the [AWS-IOT](https://aws.amazon.com/iot-core/?c=i&sec=srv) free credit version. with the free credit version, you will get
+  Amazon SNS, Amazon Grafana and DynamoDB tools to play around with your data.
 
-- AWS Account
 
 
 ![WhatsApp Image 2023-12-13 at 3 51 13 PM](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/10e27532-5c5a-49d5-b255-99ec27a17873)
