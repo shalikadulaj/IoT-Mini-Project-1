@@ -25,7 +25,7 @@ This project was created as part of the first mini-project assignment for the In
 
 ## Sensing Layer
 
-#### For this implementation, we have used the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller to read Temperature, Atmospheric Pressure, and LUX level. FIT IOT-LAB M3 is based on an STM32 (ARM Cortex M3) microcontroller controller with an ATMEL radio interface in 2.4 GHz and 4 sensors
+For this implementation, we have used the FIT [IOT-LAB M3](https://www.iot-lab.info/docs/boards/iot-lab-m3/) microcontroller to read Temperature, Atmospheric Pressure, and LUX level. FIT IOT-LAB M3 is based on an STM32 (ARM Cortex M3) microcontroller controller with an ATMEL radio interface in 2.4 GHz and 4 sensors
 
 ## Network Layer 
 
