@@ -240,11 +240,11 @@ static int cmd_start(int argc, char **argv){
     struct tm modifiedTimeinfo = *timeinfo;
 
     // Modify some fields of the copied struct tm
-    modifiedTimeinfo.tm_year += 2023-1970;  // Add 2 hours
-    modifiedTimeinfo.tm_mon += 11;  // Add 30 minutes
-    modifiedTimeinfo.tm_mday += 14; 
-    modifiedTimeinfo.tm_hour +=12 ;   
-    modifiedTimeinfo.tm_min += 30 ;
+    modifiedTimeinfo.tm_year += atoi(argv[5])-1970;  // Add 2 hours
+    modifiedTimeinfo.tm_mon += atoi(argv[6]);  // Add 30 minutes
+    modifiedTimeinfo.tm_mday += atoi(argv[7]); 
+    modifiedTimeinfo.tm_hour +=atoi(argv[8]) ;   
+    modifiedTimeinfo.tm_min += atoi(argv[9]) ;
     // Display the modified date and time directly
     //printf("Modified date and time: %s", asctime(&modifiedTimeinfo));
       
