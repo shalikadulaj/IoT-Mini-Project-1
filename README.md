@@ -378,7 +378,7 @@ MQTTClient.configureCredentials(path+"",
 
 
 
-
+[Jump to Create thing and Certificates](#Createathing)
 
 
 
@@ -408,10 +408,10 @@ The border router publishes sensor data from FIT IoT Lab to the specific topic i
 
 
 
-[Jump to Create thing and Certificates](#Createathing)
 
 
-<a name="Createathing">
+
+<a name="Createathing"> </a>
 **Create a thing**
 
 A thing resource is a digital representation of a physical device or logical entity in AWS IoT. Your device or entity needs a thing resource in the registry to use AWS IoT features such as Device Shadows, events, jobs, and device management features. 
@@ -433,7 +433,7 @@ Now need to add the End point to the code. You can get the Endpoint from the bel
 
 	AWS IoT  > Settings > Device data endpoint 
 
-</a>
+
 
 
 At this moment you can check whether the data is receiving. If not, you have to check the above steps again. To check follow the below steps. 
