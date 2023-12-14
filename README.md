@@ -351,6 +351,11 @@ in another terminal, log on to the remaining A8 node, node-a8-1.
    my_computer$ ssh <login>@grenoble.iot-lab.info
    login@grenoble:~$ ssh root@node-a8-1
 ```
+[Jump to a Create thing and Certificates](#Createathing)
+
+
+<a name="aftercreate"> </a>
+
 Now locate the MQTTSbridge.py. 
 
 before you run the Python script make sure you have set the aws certificates correctly. 
@@ -378,12 +383,12 @@ MQTTClient.configureCredentials(path+"",
 
 
 
-[Jump to a Create thing and Certificates](#Createathing)
 
 
 
 
-<a name="aftercreate"> </a>
+
+
 
 
 
