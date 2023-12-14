@@ -345,6 +345,8 @@ Run the following commands in a New Terminal to install the AWS IoT Device SDK f
 
 <summary>STEP 8. Start MQTTSN Client </summary>
 
+before you proceed further, you need aws-iot core certificates/keys to access the aws-iot dashboard. follow the link given below to get your keys.
+
 [Jump to a Create thing and Certificates](#Createathing)
 
 In the same terminal,
