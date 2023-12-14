@@ -413,6 +413,7 @@ The border router publishes sensor data from FIT IoT Lab to the specific topic i
 
 
 <a name="Createathing"> </a>
+
 ## Create a thing and Certificates
 
 A thing resource is a digital representation of a physical device or logical entity in AWS IoT. Your device or entity needs a thing resource in the registry to use AWS IoT features such as Device Shadows, events, jobs, and device management features. 
@@ -442,6 +443,11 @@ At this moment you can check whether the data is receiving. If not, you have to 
 Replace the topic with your topic.
 
 [Go back to step ?](#aftercreate)
+
+
+
+
+
 
 Now you can see the data is receiving as below. 
 
