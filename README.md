@@ -345,7 +345,7 @@ Run the following commands in a New Terminal to install the AWS IoT Device SDK f
 
 you can run this Python bridge in the same a8-1 device in a separate SSH window.
 
-in another terminal, log on to the remaining A8 node, node-a8-1.
+In the same terminal, log on to the remaining A8 node, node-a8-1.
 
 ```ruby
    my_computer$ ssh <login>@grenoble.iot-lab.info
