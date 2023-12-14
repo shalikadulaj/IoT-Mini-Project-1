@@ -203,7 +203,7 @@ static int con(char* addr, int port){
       
   // function that generate sensor values
 static void sensors_values(t_sensors* sensors){
-  sensors->temperature = temp;
+  sensors->temperature = temp/100;
   sensors->pressure = pres;
   sensors->lightLevel = lux;
 }    
