@@ -311,9 +311,9 @@ int main(void)
    
         
      //sensors_values(&sensors);     
-     printf("Temperature: %i.%u°C\n",(sensors.temperature/100),(sensors.temperature % 100)); // check this one with sprintf
-     printf("Pressure: %uhPa/n",sensors.pressure);  
-     printf("Light value: %5i LUX\n", sensors.lightLevel);   
+     //printf("Temperature: %i.%u°C\n",(sensors.temperature/100),(sensors.temperature % 100)); // check this one with sprintf
+     //printf("Pressure: %uhPa/n",sensors.pressure);  
+     //printf("Light value: %5i LUX\n", sensors.lightLevel);   
     
 
     /* start shell */
