@@ -251,11 +251,12 @@ static int cmd_start(int argc, char **argv){
     } 
 
     sensors_values(&sensors); 
+      
     char stationID [20];  
-    sprintf(stationID,"%d",atoi(argv[3]));    
+    sprintf(stationID,"%d",atoi(argv[3]));  
 
     // fills the json document
-    sprintf(json, "{\"id\": \"%d\", \"datetime\": \"%s\", \"temperature\": "
+    sprintf(json, "{\"id\": \"%s\", \"datetime\": \"%s\", \"temperature\": "
                   "\"%d\", \"pressure\": \"%d\", \"lightLevel\": \"%d\"}",
                   stationID, datetime, sensors.temperature, sensors.pressure,sensors.lightLevel);
       
