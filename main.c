@@ -238,17 +238,30 @@ static int cmd_start(int argc, char **argv){
     }
           
       
-    
-    // takes the current date and time
-    char datetime[20];
-    time_t current;
-    time(&current);
-    struct tm* t = localtime(&current);
-    int c = strftime(datetime, sizeof(datetime), "%Y-%m-%d %T", t);
-    if(c == 0) {
+   char datetime[20];  
+      
+    struct tm manualTime = {0};  // Initialize with zeros to avoid garbage values
+
+    // Set manual values
+    manualTime.tm_year = 2023 - 1900;  // Years since 1900
+    manualTime.tm_mon = 11;           // Months since January (0-11)
+    manualTime.tm_mday = 14;          // Day of the month (1-31)
+    manualTime.tm_hour = 12;          // Hours since midnight (0-23)
+    manualTime.tm_min = 34;           // Minutes after the hour (0-59)
+    manualTime.tm_sec = 56;           // Seconds after the minute (0-61)
+
+    // Convert struct tm to time_t
+    time_t localTime = mktime(&manualTime);  
+
+    // Convert time_t to struct tm for local time representation
+    struct tm* localTimeInfo = localtime(&localTime);
+      
+    int c = strftime(datetime, sizeof(datetime), "%Y-%m-%d %T", localTimeInfo);  
+     
+     if(c == 0) {
       printf("Error! Invalid format\n");
       return 0;
-    } 
+    }  
 
     sensors_values(&sensors); 
       
