@@ -240,29 +240,46 @@ static int cmd_start(int argc, char **argv){
       
    char datetime[20];  
       
-    struct tm manualTime = {0};  // Initialize with zeros to avoid garbage values
+   
+        // Get the current time as a time_t value
+    time_t currentTime = time(NULL);
 
-    // Set manual values
-    manualTime.tm_year = 2023 - 1900;  // Years since 1900
-    manualTime.tm_mon = 11;           // Months since January (0-11)
-    manualTime.tm_mday = 14;          // Day of the month (1-31)
-    manualTime.tm_hour = 12;          // Hours since midnight (0-23)
-    manualTime.tm_min = 34;           // Minutes after the hour (0-59)
-    manualTime.tm_sec = 56;           // Seconds after the minute (0-61)
+    // Convert the time_t value to a struct tm in the local timezone
+    struct tm *timeinfo = localtime(&currentTime);
 
-    // Convert struct tm to time_t
-    time_t localTime = mktime(&manualTime);  
+    if (timeinfo == NULL) {
+        perror("localtime");
+        return 1;
+    }
 
-    // Convert time_t to struct tm for local time representation
-    struct tm* localTimeInfo = localtime(&localTime);
+    // Display the current date and time
+    //printf("Current date and time: %s", asctime(timeinfo));
+
+    // Make a copy of the struct tm before modifying it
+    struct tm modifiedTimeinfo = *timeinfo;
+
+    // Modify some fields of the copied struct tm
+    modifiedTimeinfo.tm_year += 2023-1970;  // Add 2 hours
+    modifiedTimeinfo.tm_mon += 11;  // Add 30 minutes
+    modifiedTimeinfo.tm_mday += 14; 
+    modifiedTimeinfo.tm_hour +=12 ;   
+    modifiedTimeinfo.tm_min += 30 ;
+    // Display the modified date and time directly
+    //printf("Modified date and time: %s", asctime(&modifiedTimeinfo));
       
-    int c = strftime(datetime, sizeof(datetime), "%Y-%m-%d %T", localTimeInfo);  
+      
+    int c = strftime(datetime, sizeof(datetime), "%Y-%m-%d %T",&modifiedTimeinfo);  
+    
      
      if(c == 0) {
       printf("Error! Invalid format\n");
       return 0;
-    }  
-
+    }     
+     
+      
+      
+      
+      
     sensors_values(&sensors); 
       
     char stationID [20];  
