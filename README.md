@@ -320,6 +320,12 @@ if you see the global ipv6 prefix address configured then start the communicatio
  >start 2001:660:5307:3000::67 1885 station1
  
 ```
+<div align="center">
+	
+<img width="1073" alt="Screenshot 2023-12-14 at 15 01 40" src="https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/dfb98d68-f702-450c-8c3d-07711863ada3">
+
+</div>div
+
 
 </details>
 <details>
