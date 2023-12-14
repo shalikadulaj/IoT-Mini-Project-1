@@ -364,6 +364,8 @@ after you Obtain the AWS-IOT certifications, you need to create a clone link usi
 ```
 <a name="aftercreate"> </a>
 
+once you followed the above Step 7 and 8 you will see the following directories created in the a8-1 node.
+
 <img width="537" alt="Screenshot 2023-12-14 at 03 49 15" src="https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/05329d7b-cc9b-4c22-82ae-1c22d4862c25">
 
 before you run the Python script make sure you have set the path to aws certificates correctly in the file MQTTSbridge.py. 
