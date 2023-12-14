@@ -1,13 +1,3 @@
-// Add M3 timer - check
-// Add real sensor data - calibration requried
-// power optimization
-//data communication with parity
-//average the data before send
-// EEPROM
-//security
-
-
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -197,9 +187,6 @@ static int con(char* addr, int port){
   printf("Successfully connected to gateway at [%s]:%i\n", addr, port);
   return 0;
 }
-
-
-
       
   // function that generate sensor values
 static void sensors_values(t_sensors* sensors){
@@ -208,10 +195,6 @@ static void sensors_values(t_sensors* sensors){
   sensors->lightLevel = lux;
 }    
       
-
-
-
-
 // new shell command: start the station
 // the function takes in input ip address and port of the gateway,
 // and the id of the specified station
@@ -236,11 +219,9 @@ static int cmd_start(int argc, char **argv){
     if (con(argv[1], atoi(argv[2]))) {
       continue;
     }
-          
-      
+           
    char datetime[20];  
-      
-   
+        
         // Get the current time as a time_t value
     time_t currentTime = time(NULL);
 
@@ -275,11 +256,7 @@ static int cmd_start(int argc, char **argv){
       printf("Error! Invalid format\n");
       return 0;
     }     
-     
-      
-      
-      
-      
+           
     sensors_values(&sensors); 
       
     char stationID [20];  
