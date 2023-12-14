@@ -24,8 +24,14 @@ this assignment is to establish an IoT pipeline for retrieving temperature, atmo
 
 the following image will give you an overview of this implementation. 
 
+<div align="center">
 
-![WhatsApp Image 2023-12-13 at 3 51 13 PM](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/10e27532-5c5a-49d5-b255-99ec27a17873)
+
+![Screenshot 2023-12-14 at 15 10 48](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/e2855b5c-4e2a-486e-92f7-92ac7335c862)
+
+</div>
+
+
 
 This project is divided into three main layers. the main objective is to achieve the maximum efficiency, power consumption, and reliability of each layer.
 
