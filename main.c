@@ -1,12 +1,10 @@
-// Add M3 timer
-// Add real sensor data
+// Add M3 timer - check
+// Add real sensor data - calibration requried
 // power optimization
 //data communication with parity
 //average the data before send
 // EEPROM
-// change the data formatting according to shalika
-//* if ztmer error occured it is usec instead msec
-//in the main program 500 msec not added
+//security
 
 
 
@@ -240,7 +238,7 @@ static int cmd_start(int argc, char **argv){
     }
           
       
-    /*
+    
     // takes the current date and time
     char datetime[20];
     time_t current;
@@ -250,13 +248,10 @@ static int cmd_start(int argc, char **argv){
     if(c == 0) {
       printf("Error! Invalid format\n");
       return 0;
-    } */
+    } 
 
     sensors_values(&sensors); 
       
-    char datetime[20] = "0";
-    // updates sensor values
-
 
     // fills the json document
     sprintf(json, "{\"id\": \"%d\", \"datetime\": \"%s\", \"temperature\": "
