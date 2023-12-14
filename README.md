@@ -355,13 +355,13 @@ in another terminal, log on to the remaining A8 node, node-a8-1.
 
 after you Obtain the AWS-IOT certifications, you need to create a clone link using your repository named "certs". 
 ```ruby
-https://github.com/"<username>"/certs.git
+root@node-a8-1:~# git clone https://github.com/"<username>"/certs.git
 ```
 <a name="aftercreate"> </a>
 
 use the following link to clone the below in the client node a8-1.
 ```ruby
-https://github.com/"<username>"/certs.git
+root@node-a8-1:~# git clone https://github.com/shalikadulaj/IoT-Mini-Project-1.git
 ```
 before you run the Python script make sure you have set the aws certificates correctly. 
 
