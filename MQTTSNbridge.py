@@ -46,25 +46,26 @@ MQTTSNClient.registerCallback(Callback())
 MQTTClient.connect()
 MQTTSNClient.connect()
 
-#station_ids = ""
-#print("Enter the ID of the station, one by one, that you want to subscribe to.")
-#print("Type 'stop' to interrupt the process.\n")
+station_ids = ""
+print("Enter the ID of the station, one by one, that you want to subscribe to.")
+print("Type 'stop' to interrupt the process.\n")
 while True:
-#    current_id = input("")
-#    if current_id == 'stop':
-#        break
-#    else:
-#        station_ids += current_id + " "
+    current_id = input("")
+    if current_id == 'stop':
+        break
+    else:
+        station_ids += current_id + " "
 
 # subscribe to the topics choosen by the user
-#for id in station_ids:
-    MQTTSNClient.subscribe("sensor/station1")
-#print("Subscribed to stations with ID: " + station_ids)
+for id in station_ids:
+    MQTTSNClient.subscribe("sensor/station" + id)
+print("Subscribed to stations with ID: " + station_ids)
 
 # cycle that wait for a command to close the program
-#while True:
-#    if input("Enter 'quit' to exit from the program.\n")=="quit":
-#        break
+while True:
+    if input("Enter 'quit' to exit from the program.\n")=="quit":
+        break
+      
 # disconnect from the clients
 MQTTSNClient.disconnect()
 MQTTClient.disconnect()
