@@ -25,7 +25,7 @@ class Callback:
 
 
 # path that indicates the certificates position (ssh root@node-a8-?)
-path = "/home/root/IOTG7/client_MQTTSN/certs/"
+path = "/home/root/IoT-Mini-Project-1/certs/"
 
 # configure the access with the AWS MQTT broker
 MQTTClient.configureEndpoint("a5hi9k1blxeai-ats.iot.eu-west-1.amazonaws.com", 8883)
