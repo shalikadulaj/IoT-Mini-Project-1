@@ -345,35 +345,33 @@ Run the following commands in a New Terminal to install the AWS IoT Device SDK f
 
 <summary>STEP 8. Start MQTTSN Client </summary>
 
-you can run this Python bridge in the same a8-1 device in a separate SSH window.
-
-In the same terminal, log on to the remaining A8 node, node-a8-1.
-
-```ruby
-   my_computer$ ssh <login>@grenoble.iot-lab.info
-   login@grenoble:~$ ssh root@node-a8-1
-```
 [Jump to a Create thing and Certificates](#Createathing)
 
-after you Obtain the AWS-IOT certifications, you need to create a clone link using your repository named "certs". 
-```ruby
-root@node-a8-1:~# git clone https://github.com/"<username>"/certs.git
-```
-<a name="aftercreate"> </a>
+In the same terminal,
 
 use the following link to clone the below in the client node a8-1.
 ```ruby
-root@node-a8-1:~# git clone https://github.com/shalikadulaj/IoT-Mini-Project-1.git
+    root@node-a8-1:~# git clone https://github.com/shalikadulaj/IoT-Mini-Project-1.git
 ```
+#### Important
+after you Obtain the AWS-IOT certifications, you need to create a clone link using your repository named "certs". 
+```ruby
+     root@node-a8-1:~# cd IoT-Mini-Project-1
+     root@node-a8-103:~/IoT-Mini-Project-1# git clone https://github.com/"<username>"/certs.git
+```
+<a name="aftercreate"> </a>
+
+<img width="537" alt="Screenshot 2023-12-14 at 03 49 15" src="https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/153508129/05329d7b-cc9b-4c22-82ae-1c22d4862c25">
+
 before you run the Python script make sure you have set the path to aws certificates correctly in the file MQTTSbridge.py. 
 
 path that indicates the certificates position (ssh root@node-a8-?)
 
 ```ruby
 #path that indicates the certificates position (ssh root@node-a8-?)
-path = "/home/root/../certs/"
+path = "/home/root/IoT-Mini-Project-1/certs/"
 
-# configure the access with the AWS MQTT broker
+# configure the access with the AWS MQTT broker:
 MQTTClient.configureEndpoint("", 8883)
 MQTTClient.configureCredentials(path+"",
                                 path+"",
@@ -381,22 +379,10 @@ MQTTClient.configureCredentials(path+"",
 
 ```
 ```ruby
-   username@grenoble:~$ cd RIOT/examples/MQTTSbridge.py
-   username@grenoble:~/RIOT/examples/$ python3 MQTTSbridge.py
+   root@node-a8-103:~/IoT-Mini-Project-1# python3 MQTTSNbridge.py
 ```
 
 </details>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
