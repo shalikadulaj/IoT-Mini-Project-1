@@ -149,7 +149,7 @@ Connect to the SSH frontend of the Grenoble site of FIT/IoT-LAB by using the use
 
 You can find more about CLI tools [here](https://www.iot-lab.info/legacy/tutorials/iotlab-experimenttools-client/index.html)
 
-Open a New terminal and execute the following:
+In the same terminal and execute the following:
 
 ```ruby
    username@grenoble:~$ iotlab-auth -u <username>
