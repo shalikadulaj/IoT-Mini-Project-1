@@ -137,7 +137,7 @@ Connect to the SSH frontend of the Grenoble site of FIT/IoT-LAB by using the use
 > Note: you will also put the folder everywhere you want, but you must be careful to edit the Makefile correctly by entering the correct path to the RIOT folder. Therefore modify this line in the Makefile:
 
 ```ruby
-  RIOTBASE ?= $(CURDIR)/../..
+   RIOTBASE ?= $(CURDIR)/../..
 ```
 </details>
 
