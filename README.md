@@ -440,7 +440,7 @@ Now need to add the End point to the code. You can get the Endpoint from the bel
 
 	AWS IoT  > Settings > Device data endpoint 
 
-[Go back to step ?](#aftercreate)
+[Go back to step 8](#aftercreate)
 
 
 
