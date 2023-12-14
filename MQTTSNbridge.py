@@ -3,7 +3,7 @@ import MQTTSNclient
 import json
 #import boto3
 
-# connection to DynamoDB and access to the table EnvironmentalStationDB
+#connection to DynamoDB and access to the table EnvironmentalStationDB
 #dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 #dynamoTable = dynamodb.Table('EnvironmentalStationDB')
 jsonP = ''
