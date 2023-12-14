@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/IoTG7 - Copy/IoT-Mini-Project-1",
-      "program": "d:/IoTG7 - Copy/IoT-Mini-Project-1/build/Debug/outDebug",
+      "cwd": "d:/IoTG7/IoT-Mini-Project-1/IoT-Mini-Project-1",
+      "program": "d:/IoTG7/IoT-Mini-Project-1/IoT-Mini-Project-1/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
