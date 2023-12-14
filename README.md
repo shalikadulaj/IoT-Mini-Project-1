@@ -363,7 +363,7 @@ use the following link to clone the below in the client node a8-1.
 ```ruby
 root@node-a8-1:~# git clone https://github.com/shalikadulaj/IoT-Mini-Project-1.git
 ```
-before you run the Python script make sure you have set the aws certificates correctly. 
+before you run the Python script make sure you have set the path to aws certificates correctly in the file MQTTSbridge.py. 
 
 path that indicates the certificates position (ssh root@node-a8-?)
 
