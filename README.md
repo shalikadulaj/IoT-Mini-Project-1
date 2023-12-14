@@ -131,6 +131,8 @@ Connect to the SSH frontend of the Grenoble site of FIT/IoT-LAB by using the use
 #### Clone the Sensor Node repository from GitHub:
 
 ```ruby
+
+    username@grenoble:~$ cd RIOT/examples
     username@grenoble:~/RIOT/examples$ git clone https://github.com/shalikadulaj/IoT-Mini-Project-1.git
 ```
 
