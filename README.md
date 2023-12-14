@@ -375,6 +375,9 @@ MQTTClient.configureCredentials(path+"",
 
 </details>
 
+<a name="Create a thing"></a>
+
+
 ## Data Management and Visualization
 
 ## :cloud: AWS 
