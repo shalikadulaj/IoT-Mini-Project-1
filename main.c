@@ -34,7 +34,7 @@
 #include "net/ipv6/addr.h"
 
 #ifndef EMCUTE_ID
-#define EMCUTE_ID ("gertrud")
+#define EMCUTE_ID ("WeatherStation")
 #endif
 
 #define EMCUTE_PORT (1883U)
