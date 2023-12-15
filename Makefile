@@ -5,7 +5,7 @@ APPLICATION = Sensing_Layer
 BOARD ?=iotlab-m3
 
 # This has to be the absolute path to the RIOT base directory:
-RIOTBASE ?= $(CURDIR)/../../RIOT
+RIOTBASE ?= $(CURDIR)/../..
 
 # Include packages that pull up and auto-init the link layer.
 # NOTE: 6LoWPAN will be included if IEEE802.15.4 devices are present
@@ -37,7 +37,7 @@ USEMODULE += netstats_rpl
 # Add the required sensor modules here
 USEMODULE += lps331ap
 USEMODULE += isl29020
-FEATURES_REQUIRED += periph_i2c
+
 
 # Allow for env-var-based override of the nodes name (EMCUTE_ID)
 ifneq (,$(EMCUTE_ID))
