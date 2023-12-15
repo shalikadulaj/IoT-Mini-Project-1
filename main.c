@@ -334,6 +334,4 @@ static int cmd_start(int argc, char **argv) {
 
     return 0;
 }
-```
 
-This version maintains the provided formatting and includes all the elements from the original code. Let me know if you have any further requests or questions!
