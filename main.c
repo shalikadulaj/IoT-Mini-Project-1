@@ -76,7 +76,7 @@ static char isl29020_stack[THREAD_STACKSIZE_MAIN];
 
 static msg_t queue[8];
 
-/*
+
 // Function declarations
 int _gettimeofday( struct timeval *tv, void *tzvp );
 static void *emcute_thread(void *arg);
@@ -87,10 +87,12 @@ static void *thread_handler_isl29020(void *arg);
 static int pub(char *topic, char *data, int qos);
 static int con(char *addr, int port);
 static void sensors_values(t_sensors *sensors);
-static int cmd_start(int argc, char **argv);*/
+static int cmd_start(int argc, char **argv);
 
 
-
+// FIT-IOT lab uses gcc-8.3.0 compilor which casue 
+//compiling error of _gettimeofday. following function
+// ignore the error. it is recommened to use gcc-9 or higher
 int _gettimeofday( struct timeval *tv, void *tzvp )
 {
     uint64_t t = time(NULL);  // get uptime in nanoseconds
