@@ -88,8 +88,6 @@ static int con(char *addr, int port);
 static void sensors_values(t_sensors *sensors);
 static int cmd_start(int argc, char **argv);
 
-#include <sys/time.h>
-
 int _gettimeofday( struct timeval *tv, void *tzvp )
 {
     uint64_t t = time(NULL);  // get uptime in nanoseconds
