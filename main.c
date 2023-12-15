@@ -89,7 +89,7 @@ static int con(char *addr, int port);
 static void sensors_values(t_sensors *sensors);
 static int cmd_start(int argc, char **argv);*/
 
-/*
+
 
 int _gettimeofday( struct timeval *tv, void *tzvp )
 {
@@ -99,9 +99,7 @@ int _gettimeofday( struct timeval *tv, void *tzvp )
     return 0;  // return non-zero for error
 } // end _gettimeofday()
 
-
-
-*/// Function definitions...
+// Function definitions...
 
 static void *emcute_thread(void *arg) {
     (void)arg;
@@ -127,7 +125,7 @@ static void *thread_handler_lps331ap_T(void *arg) {
 
     while (1) {
         lpsxxx_read_temp(&lpsxxx, &temp);
-        printf("Temperature: %i°C\n", (temp / 100));
+       // printf("Temperature: %i°C\n", (temp / 100));
         ztimer_sleep(ZTIMER_MSEC, 3000);
     }
 
@@ -139,7 +137,7 @@ static void *thread_handler_lps331ap_P(void *arg) {
 
     while (1) {
         lpsxxx_read_pres(&lpsxxx, &pres);
-        printf("Pressure: %uhPa\n", pres);
+        //printf("Pressure: %uhPa\n", pres);
         ztimer_sleep(ZTIMER_MSEC, 5000);
     }
 
