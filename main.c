@@ -76,6 +76,7 @@ static char isl29020_stack[THREAD_STACKSIZE_MAIN];
 
 static msg_t queue[8];
 
+/*
 // Function declarations
 int _gettimeofday( struct timeval *tv, void *tzvp );
 static void *emcute_thread(void *arg);
@@ -86,7 +87,9 @@ static void *thread_handler_isl29020(void *arg);
 static int pub(char *topic, char *data, int qos);
 static int con(char *addr, int port);
 static void sensors_values(t_sensors *sensors);
-static int cmd_start(int argc, char **argv);
+static int cmd_start(int argc, char **argv);*/
+
+/*
 
 int _gettimeofday( struct timeval *tv, void *tzvp )
 {
@@ -98,45 +101,7 @@ int _gettimeofday( struct timeval *tv, void *tzvp )
 
 
 
-
-static const shell_command_t shell_commands[] = {
-    {"start", "Start the station", cmd_start},
-    {NULL, NULL, NULL}
-};
-
-int main(void) {
-    // Initialize the LPS331AP sensor
-    lpsxxx_init(&lpsxxx, &lpsxxx_params[0]);
-
-    // Initialize the ISL29020 sensor
-    isl29020_init(&dev, &isl29020_params[1]);
-
-    // The main thread needs a message queue for running `ping6`
-    msg_init_queue(queue, ARRAY_SIZE(queue));
-
-    // Start the emcute thread
-    thread_create(stack, sizeof(stack), EMCUTE_PRIO, 0,
-                  emcute_thread, NULL, "emcute");
-
-    // Create threads for LPS331AP and ISL29020
-    thread_create(lps331ap_stack_T, sizeof(lps331ap_stack_T), THREAD_PRIORITY_MAIN - 1, 0,
-                  thread_handler_lps331ap_T, NULL, "lps331ap_thread_Temperature");
-
-    thread_create(lps331ap_stack_P, sizeof(lps331ap_stack_P), THREAD_PRIORITY_MAIN - 2, 0,
-                  thread_handler_lps331ap_P, NULL, "lps331ap_thread_Pressure");
-
-    thread_create(isl29020_stack, sizeof(isl29020_stack), THREAD_PRIORITY_MAIN - 3, 0,
-                  thread_handler_isl29020, NULL, "isl29020_LUX");
-
-    // Start the shell
-    char line_buf[SHELL_DEFAULT_BUFSIZE];
-    shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
-
-    // This should never be reached
-    return 0;
-}
-
-// Function definitions...
+*/// Function definitions...
 
 static void *emcute_thread(void *arg) {
     (void)arg;
@@ -162,7 +127,7 @@ static void *thread_handler_lps331ap_T(void *arg) {
 
     while (1) {
         lpsxxx_read_temp(&lpsxxx, &temp);
-       // printf("Temperature: %i°C\n", (temp / 100));
+        printf("Temperature: %i°C\n", (temp / 100));
         ztimer_sleep(ZTIMER_MSEC, 3000);
     }
 
@@ -174,7 +139,7 @@ static void *thread_handler_lps331ap_P(void *arg) {
 
     while (1) {
         lpsxxx_read_pres(&lpsxxx, &pres);
-        //printf("Pressure: %uhPa\n", pres);
+        printf("Pressure: %uhPa\n", pres);
         ztimer_sleep(ZTIMER_MSEC, 5000);
     }
 
@@ -303,11 +268,11 @@ static int cmd_start(int argc, char **argv) {
 
         struct tm modifiedTimeinfo = *timeinfo;
 
-        modifiedTimeinfo.tm_year += atoi(argv[5]) - 1970;
-        modifiedTimeinfo.tm_mon += atoi(argv[6]);
-        modifiedTimeinfo.tm_mday += atoi(argv[7]);
-        modifiedTimeinfo.tm_hour += atoi(argv[8]);
-        modifiedTimeinfo.tm_min += atoi(argv[9]);
+        modifiedTimeinfo.tm_year += 2012 - 1970;
+        modifiedTimeinfo.tm_mon += 12;
+        modifiedTimeinfo.tm_mday += 15;
+        modifiedTimeinfo.tm_hour += 1;
+        modifiedTimeinfo.tm_min += 20;
 
         int c = strftime(datetime, sizeof(datetime), "%Y-%m-%d %T", &modifiedTimeinfo);
 
@@ -318,13 +283,11 @@ static int cmd_start(int argc, char **argv) {
 
         sensors_values(&sensors);
 
-        char stationID[20];
-        sprintf(stationID, "%d", atoi(argv[3]));
 
         // fills the json document
-        sprintf(json, "{\"id\": \"%s\", \"datetime\": \"%s\", \"temperature\": "
+        sprintf(json, "{\"id\": \"%d\", \"datetime\": \"%s\", \"temperature\": "
                       "\"%d\", \"pressure\": \"%d\", \"lightLevel\": \"%d\"}",
-                stationID, datetime, sensors.temperature, sensors.pressure, sensors.lightLevel);
+                atoi(argv[3]), datetime, sensors.temperature, sensors.pressure, sensors.lightLevel);
 
         // publish to the topic
         pub(topic, json, 0);
@@ -339,3 +302,39 @@ static int cmd_start(int argc, char **argv) {
     return 0;
 }
 
+static const shell_command_t shell_commands[] = {
+    {"start", "Start the station", cmd_start},
+    {NULL, NULL, NULL}
+};
+
+int main(void) {
+    // Initialize the LPS331AP sensor
+    lpsxxx_init(&lpsxxx, &lpsxxx_params[0]);
+
+    // Initialize the ISL29020 sensor
+    isl29020_init(&dev, &isl29020_params[1]);
+
+    // The main thread needs a message queue for running `ping6`
+    msg_init_queue(queue, ARRAY_SIZE(queue));
+
+    // Start the emcute thread
+    thread_create(stack, sizeof(stack), EMCUTE_PRIO, 0,
+                  emcute_thread, NULL, "emcute");
+
+    // Create threads for LPS331AP and ISL29020
+    thread_create(lps331ap_stack_T, sizeof(lps331ap_stack_T), THREAD_PRIORITY_MAIN - 1, 0,
+                  thread_handler_lps331ap_T, NULL, "lps331ap_thread_Temperature");
+
+    thread_create(lps331ap_stack_P, sizeof(lps331ap_stack_P), THREAD_PRIORITY_MAIN - 2, 0,
+                  thread_handler_lps331ap_P, NULL, "lps331ap_thread_Pressure");
+
+    thread_create(isl29020_stack, sizeof(isl29020_stack), THREAD_PRIORITY_MAIN - 3, 0,
+                  thread_handler_isl29020, NULL, "isl29020_LUX");
+
+    // Start the shell
+    char line_buf[SHELL_DEFAULT_BUFSIZE];
+    shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
+
+    // This should never be reached
+    return 0;
+}
