@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <time.h>
+#include <sys/time.h>
 
 #include "timex.h"
 #include "thread.h"
@@ -48,15 +48,7 @@
 #include "isl29020.h"
 #include "isl29020_params.h"
 #include "isl29020-internal.h"
-#include "periph/i2c.h"
 
-#define ENABLE_DEBUG 0
-#include "debug.h"
-
-#define DEV_I2C      (dev->params.i2c)
-#define DEV_ADDR     (dev->params.addr)
-#define DEV_RANGE    (dev->params.range)
-#define DEV_MODE     (dev->params.mode)
 
 // Declare the LPS331AP device variable
 static lpsxxx_t lpsxxx;
@@ -85,6 +77,7 @@ static char isl29020_stack[THREAD_STACKSIZE_MAIN];
 static msg_t queue[8];
 
 // Function declarations
+int _gettimeofday( struct timeval *tv, void *tzvp );
 static void *emcute_thread(void *arg);
 static int discon(void);
 static void *thread_handler_lps331ap_T(void *arg);
@@ -94,6 +87,19 @@ static int pub(char *topic, char *data, int qos);
 static int con(char *addr, int port);
 static void sensors_values(t_sensors *sensors);
 static int cmd_start(int argc, char **argv);
+
+#include <sys/time.h>
+
+int _gettimeofday( struct timeval *tv, void *tzvp )
+{
+    uint64_t t = time(NULL);  // get uptime in nanoseconds
+    tv->tv_sec = t / 1000000000;  // convert to seconds
+    tv->tv_usec = ( t % 1000000000 ) / 1000;  // get remaining microseconds
+    return 0;  // return non-zero for error
+} // end _gettimeofday()
+
+
+
 
 static const shell_command_t shell_commands[] = {
     {"start", "Start the station", cmd_start},
