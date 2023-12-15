@@ -164,7 +164,7 @@ static void *thread_handler_lps331ap_T(void *arg) {
 
     while (1) {
         lpsxxx_read_temp(&lpsxxx, &temp);
-        printf("Temperature: %i°C\n", (temp / 100));
+       // printf("Temperature: %i°C\n", (temp / 100));
         ztimer_sleep(ZTIMER_MSEC, 3000);
     }
 
@@ -176,7 +176,7 @@ static void *thread_handler_lps331ap_P(void *arg) {
 
     while (1) {
         lpsxxx_read_pres(&lpsxxx, &pres);
-        printf("Pressure: %uhPa\n", pres);
+        //printf("Pressure: %uhPa\n", pres);
         ztimer_sleep(ZTIMER_MSEC, 5000);
     }
 
@@ -201,9 +201,9 @@ static void *thread_handler_isl29020(void *arg) {
     while (1) {
         if (isl29020_read(&dev) != 0) {
             lux = isl29020_read(&dev);
-            printf("Light value: %d LUX\n", lux);
+            //printf("Light value: %d LUX\n", lux);
         } else {
-            printf("Light value: failed\n");
+            //printf("Light value: failed\n");
         }
 
         ztimer_sleep(ZTIMER_MSEC, 5000);
