@@ -418,9 +418,9 @@ MQTTClient.configureCredentials(path+"",
 
 ## :cloud: AWS 
 
-Amazon Web Services (AWS) is a leading cloud platform offering a comprehensive suite of services for data storage, visualization, and alerting. 
+[Amazon Web Services (AWS)](https://docs.aws.amazon.com/index.html ) is a leading cloud platform offering a comprehensive suite of services for data storage, visualization, and alerting. 
 
-https://docs.aws.amazon.com/index.html 
+
 
 <details>
 
