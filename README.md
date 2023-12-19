@@ -426,7 +426,7 @@ https://docs.aws.amazon.com/index.html
 
 
 
-<summary> ## AWS IoT Core </summary>
+<summary> AWS IoT Core </summary>
 
 AWS IoT Core is a managed cloud service that facilitates secure communication between IoT devices and the AWS Cloud. It ensures encrypted connectivity, device management, and seamless integration with AWS services. With features like device shadows and a scalable architecture, it's ideal for building secure and scalable IoT applications. 
 
@@ -482,6 +482,9 @@ Replace the topic with your topic. Now you can see the data is receiving as belo
 </div>
 
 </details>
+
+
+
 
 ## AWS Timestream 
 
