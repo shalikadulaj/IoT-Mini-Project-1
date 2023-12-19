@@ -438,11 +438,12 @@ The border router publishes sensor data from FIT IoT Lab to the specific topic i
 
 
 
+<details>
 
 
 <a name="Createathing"> </a>
 
-## Create a thing and Certificates
+<summary>  Create a thing and Certificates </summary> 
 
 A thing resource is a digital representation of a physical device or logical entity in AWS IoT. Your device or entity needs a thing resource in the registry to use AWS IoT features such as Device Shadows, events, jobs, and device management features. 
 
@@ -458,6 +459,7 @@ Follow the below steps to create a thing
 
 Finally, you must download the device certificate, key files, and Root CA Certificates. These certificates should be added to the code. It is mentioned in the code, that you can replace the certificates with yours's. 
 
+</details>
 
 Now need to add the End point to the code. You can get the Endpoint from the below path 
 
@@ -485,8 +487,8 @@ Replace the topic with your topic. Now you can see the data is receiving as belo
 
 
 
-
-## AWS Timestream 
+<details>
+<summary> AWS Timestream </summary> 
 
 AWS Timestream is a fully managed, serverless time-series database service provided by Amazon Web Services (AWS). It is specifically designed to handle time-series data at scale. Time-series data is characterized by data points associated with timestamps. In this project, the data from the IoT core is ingested into the AWS Timestream database using AWS rules. 
 
@@ -520,9 +522,12 @@ First, you need to add rules. Follow below steps to add rules
 	- Add a IAM role – Click on create new role 
 
 - Review and create 
+</details>
 
+<details>
 
-## AWS Managed Grafana
+<summary> AWS Managed Grafana </summary>
+
 
 AWS Managed Grafana is a fully managed and scalable service that simplifies the deployment, operation, and scaling of Grafana for analytics and monitoring. It integrates seamlessly with other AWS services, offering a user-friendly interface for creating dashboards and visualizations to gain insights from diverse data sources. We are using Grafana for visualizing data using AWS Timestream as a data source. 
 
@@ -567,9 +572,12 @@ Add data base, table and measure. Then save.
 
 Now you are successfully connected the data source. Then using Grafana, you can create a dashboard as you need. 
 
+</details>
 
+<details>
 
-## AWS SNS
+<summary> AWS SNS </summary>
+
 
 Amazon Simple Notification Service (SNS) is a fully managed messaging service by AWS. It enables the publishing of messages to a variety of endpoints, including mobile devices, email, and more. SNS simplifies the creation and management of message-driven applications, providing flexibility and scalability for diverse communication scenarios. In here rules are set for triggering email alerts using AWS SNS service. To set rules follow below steps. 
 
@@ -603,9 +611,12 @@ Amazon Simple Notification Service (SNS) is a fully managed messaging service by
 
 Here rules are set for triggering email alerts using the AWS SNS service. Write SQL quarries to trigger AWS SNS 
 
+</details>
 
 
-## AWS Dynamodb
+<details>
+<summary> AWS Dynamodb </summary>
+
 
 
 AWS DynamoDB, a fully managed NoSQL database, we are using this for storing alert data. With seamless scalability and low-latency access, DynamoDB ensures reliable and fast retrieval of alert information. Its flexible schema accommodates evolving data needs, making it a robust solution for storing and retrieving dynamic alert data. 
@@ -618,4 +629,4 @@ AWS DynamoDB, a fully managed NoSQL database, we are using this for storing aler
 	- Add table – Click on “Create DynamoDB table” 
 	- Add a IAM role – Click on “create new role” 
 
-
+</details>
