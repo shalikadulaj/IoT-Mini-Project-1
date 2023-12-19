@@ -459,7 +459,7 @@ Follow the below steps to create a thing
 
 Finally, you must download the device certificate, key files, and Root CA Certificates. These certificates should be added to the code. It is mentioned in the code, that you can replace the certificates with yours's. 
 
-</details>
+
 
 Now need to add the End point to the code. You can get the Endpoint from the below path 
 
@@ -482,6 +482,7 @@ Replace the topic with your topic. Now you can see the data is receiving as belo
 ![5](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/edc49f9e-cd09-487c-ad08-107e6074c859)
 
 </div>
+</details>
 
 </details>
 
