@@ -3,7 +3,7 @@
 
 ### Group Members
 
-* Shalika Dulaj
+* Shalika Dulaj Amarathunga
 * Ana Ferreira
 * Kavinda Rathnayaka
 
