@@ -108,7 +108,9 @@ RSMB is a server  Implementation of the MQTT and MQTT-SN protocols. Any client t
 
 local RSMB broker will run on a separate [IOT-LAB A8-M3](https://www.iot-lab.info/docs/boards/iot-lab-a8-m3/) node and the Sensor node publishes topics to port 1885. The IoT-LAB A8-M3 board is based on a TI SITARA AM3505 which is a high-performance ARM Cortex-A8 microprocessor. Its 600 MHz clock speed enables it to run an embedded Linux. RSMB needs to run as a service hence we used A8 board to serve the purpose. 
 
-## Getting Started 
+## Getting Started  
+
+### ( click the arrow to open guidelines for each step )
 
 <details>
 
