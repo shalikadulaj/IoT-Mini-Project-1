@@ -220,6 +220,13 @@ Use the CLI-Tools to flash the Sensor_Read firmware that you have just built on 
    username@grenoble:~/RIOT/$ iotlab-node --flash examples/IoT-Mini-Project-1/bin/iotlab-m3/Sensing_Layer.elf -l grenoble,m3,2
 
 ```
+Or you can directly upload our pre-compiled firmware for iot-lab-m3 board :
+```ruby
+   username@grenoble:~/RIOT/$ iotlab-node --flash examples/IoT-Mini-Project-1/Sensing_Layer.elf -l grenoble,m3,2
+
+```
+
+
 Open the Sensor Node m3-2 shell  and check the Global IPV6 prefix is obtained from the border router subnet using help -> ifconfig
 
 In this case it is - inet6 addr: 2001:660:5307:3100:b8d0:5b74:8db9:353f  scope: global  VAL
@@ -323,7 +330,7 @@ root@node-a8-1:~# broker_mqtts config.conf
 if you see the global ipv6 prefix address configured then start the communication with MQTTs broker by executing the following command in the node shell.
 ```ruby
  username@grenoble:~/RIOT$ nc m3-102 20000
- >start 2001:660:5307:3000::67 1885 station1
+ >start 2001:660:5307:3000::67 1885 1
  
 ```
 <div align="center">
