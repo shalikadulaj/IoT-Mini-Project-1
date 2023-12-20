@@ -78,7 +78,6 @@ static msg_t queue[8];
 
 
 // Function declarations
-int _gettimeofday( struct timeval *tv, void *tzvp );
 static void *emcute_thread(void *arg);
 static int discon(void);
 static void *thread_handler_lps331ap_T(void *arg);
@@ -89,17 +88,6 @@ static int con(char *addr, int port);
 static void sensors_values(t_sensors *sensors);
 static int cmd_start(int argc, char **argv);
 
-
-// FIT-IOT lab uses gcc-8.3.0 compilor which casue 
-//compiling error of _gettimeofday. following function
-// ignore the error. it is recommened to use gcc-9 or higher
-int _gettimeofday( struct timeval *tv, void *tzvp )
-{
-    uint64_t t = time(NULL);  // get uptime in nanoseconds
-    tv->tv_sec = t / 1000000000;  // convert to seconds
-    tv->tv_usec = ( t % 1000000000 ) / 1000;  // get remaining microseconds
-    return 0;  // return non-zero for error
-} // end _gettimeofday()
 
 // Function definitions...
 
@@ -164,6 +152,7 @@ static void *thread_handler_isl29020(void *arg) {
     while (1) {
         if (isl29020_read(&dev) != 0) {
             lux = isl29020_read(&dev);
+            
             //printf("Light value: %d LUX\n", lux);
         } else {
             //printf("Light value: failed\n");
@@ -228,7 +217,9 @@ static int con(char *addr, int port) {
 }
 
 static void sensors_values(t_sensors *sensors) {
-    sensors->temperature = temp;
+    
+    
+    sensors->temperature = (temp/100);
     sensors->pressure = pres;
     sensors->lightLevel = lux;
 }
@@ -242,7 +233,7 @@ static int cmd_start(int argc, char **argv) {
     t_sensors sensors;
     // name of the topic
     char topic[32];
-    sprintf(topic, "sensor/station%d", atoi(argv[3]));
+    sprintf(topic, "sensor/station1");
 
     // json that it will be published
     char json[256];
@@ -268,11 +259,11 @@ static int cmd_start(int argc, char **argv) {
 
         struct tm modifiedTimeinfo = *timeinfo;
 
-        modifiedTimeinfo.tm_year += 2012 - 1970;
-        modifiedTimeinfo.tm_mon += 12;
-        modifiedTimeinfo.tm_mday += 15;
-        modifiedTimeinfo.tm_hour += 1;
-        modifiedTimeinfo.tm_min += 20;
+        modifiedTimeinfo.tm_year += 2023 - 1970;
+        modifiedTimeinfo.tm_mon += 11;
+        modifiedTimeinfo.tm_mday += 18;
+        modifiedTimeinfo.tm_hour += 22;
+        
 
         int c = strftime(datetime, sizeof(datetime), "%Y-%m-%d %T", &modifiedTimeinfo);
 
@@ -312,7 +303,7 @@ int main(void) {
     lpsxxx_init(&lpsxxx, &lpsxxx_params[0]);
 
     // Initialize the ISL29020 sensor
-    isl29020_init(&dev, &isl29020_params[1]);
+    isl29020_init(&dev, &isl29020_params[0]);
 
     // The main thread needs a message queue for running `ping6`
     msg_init_queue(queue, ARRAY_SIZE(queue));
