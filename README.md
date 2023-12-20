@@ -220,11 +220,14 @@ Use the CLI-Tools to flash the Sensor_Read firmware that you have just built on 
    username@grenoble:~/RIOT/$ iotlab-node --flash examples/IoT-Mini-Project-1/bin/iotlab-m3/Sensing_Layer.elf -l grenoble,m3,2
 
 ```
+
 Or you can directly upload our pre-compiled firmware for iot-lab-m3 board :
+
 ```ruby
    username@grenoble:~/RIOT/$ iotlab-node --flash examples/IoT-Mini-Project-1/Sensing_Layer.elf -l grenoble,m3,2
 
 ```
+
 
 
 Open the Sensor Node m3-2 shell  and check the Global IPV6 prefix is obtained from the border router subnet using help -> ifconfig
