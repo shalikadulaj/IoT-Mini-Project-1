@@ -303,7 +303,8 @@ Edit a file config.conf (vim config.conf) with the following content:
 ```ruby
 
 # add some debug output
-trace_output protocol
+#trace_output protocol
+allow_anonymous true
    
 # listen for MQTT-SN traffic on UDP port 1885
 listener 1885 INADDR_ANY mqtts
