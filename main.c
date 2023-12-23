@@ -32,12 +32,13 @@
 #include "msg.h"
 #include "net/emcute.h"
 #include "net/ipv6/addr.h"
+#include "periph/wdt.h"
 
 #ifndef EMCUTE_ID
-#define EMCUTE_ID ("WeatherStation")
+#define EMCUTE_ID ("WeatherStation_4")
 #endif
 
-#define EMCUTE_PORT (1883U)
+#define EMCUTE_PORT (1884U)
 #define EMCUTE_PRIO (THREAD_PRIORITY_MAIN - 1)
 
 // LPS331AP related includes
@@ -128,7 +129,7 @@ static void *thread_handler_lps331ap_P(void *arg) {
     while (1) {
         lpsxxx_read_pres(&lpsxxx, &pres);
         //printf("Pressure: %uhPa\n", pres);
-        ztimer_sleep(ZTIMER_MSEC, 5000);
+        ztimer_sleep(ZTIMER_MSEC, 3000);
     }
 
     return NULL;
@@ -210,6 +211,7 @@ static int con(char *addr, int port) {
 
     if (emcute_con(&gw, true, NULL, NULL, 0, 0) != EMCUTE_OK) {
         printf("error: unable to connect to [%s]:%i\n", addr, port);
+        
         return 1;
     }
     printf("Successfully connected to gateway at [%s]:%i\n", addr, port);
@@ -233,7 +235,7 @@ static int cmd_start(int argc, char **argv) {
     t_sensors sensors;
     // name of the topic
     char topic[32];
-    sprintf(topic, "sensor/station1");
+   sprintf(topic,"sensor/station%d", atoi(argv[3]));
 
     // json that it will be published
     char json[256];
@@ -261,8 +263,8 @@ static int cmd_start(int argc, char **argv) {
 
         modifiedTimeinfo.tm_year += 2023 - 1970;
         modifiedTimeinfo.tm_mon += 11;
-        modifiedTimeinfo.tm_mday += 18;
-        modifiedTimeinfo.tm_hour += 22;
+        modifiedTimeinfo.tm_mday = 23;
+        modifiedTimeinfo.tm_hour = 0;
         
 
         int c = strftime(datetime, sizeof(datetime), "%Y-%m-%d %T", &modifiedTimeinfo);
@@ -287,7 +289,7 @@ static int cmd_start(int argc, char **argv) {
         discon();
 
         // it sleeps for five seconds
-        ztimer_sleep(ZTIMER_MSEC, 1000);
+        ztimer_sleep(ZTIMER_SEC, 10);
     }
 
     return 0;
@@ -299,6 +301,9 @@ static const shell_command_t shell_commands[] = {
 };
 
 int main(void) {
+    
+    
+
     // Initialize the LPS331AP sensor
     lpsxxx_init(&lpsxxx, &lpsxxx_params[0]);
 
