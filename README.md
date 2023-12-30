@@ -4,7 +4,6 @@
 ### Group Members
 
 * Shalika Dulaj Amarathunga
-* Ana Ferreira
 * Kavinda Rathnayaka
 
 ##  Video Demonstration
