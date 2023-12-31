@@ -654,3 +654,11 @@ AWS DynamoDB, a fully managed NoSQL database, we are using this for storing aler
 	- Add an IAM role – Click on “create new role” 
 
 </details>
+## Contributing
+Contributions to enhance the script, add new features, or improve the data processing algorithms are welcome.
+
+## License
+[Specify License Here]
+
+## Acknowledgments
+- [Any relevant acknowledgments]
