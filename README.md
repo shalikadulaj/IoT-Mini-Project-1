@@ -157,11 +157,11 @@ Connect to the SSH frontend of the Grenoble site of FIT/IoT-LAB by using the use
 
 <details>
 
-<summary> STEP 3. Submit an experiment in FIT IOT-LAB Grenoble site using CLI tools </summary>
+<summary> STEP 3. Submit an experiment in the FIT IOT-LAB Grenoble site using CLI tools </summary>
 
 You can find more about CLI tools [here](https://www.iot-lab.info/legacy/tutorials/iotlab-experimenttools-client/index.html)
 
-In the same terminal and execute the following:
+In the same terminal execute the following:
 
 ```ruby
    username@grenoble:~$ iotlab-auth -u <username>
@@ -194,13 +194,13 @@ Now you can configure the network of the border router on m3-1 and propagate an 
 username@grenoble:~/RIOT/$ cd
 username@grenoble:~$ sudo ethos_uhcpd.py m3-1 tap0 2001:660:5307:3100::1/64
 ```
-The network is finally configured and you will see similar response like below:
+The network is finally configured and you will see a similar response below:
 
 ```ruby
 net.ipv6.conf.tap0.forwarding = 1
 net.ipv6.conf.tap0.accept_ra = 0
 ----> ethos: sending hello.
-----> ethos: activating serial pass through.
+----> ethos: activating serial pass-through.
 ----> ethos: hello reply received
 ```
 > Note 1: leave the terminal open (you don’t want to kill ethos_uhcpd.py, it bridges the BR to the front-end network)
@@ -214,7 +214,7 @@ net.ipv6.conf.tap0.accept_ra = 0
 
 <summary>STEP 5. Build the Sensor_Read firmware </summary>
 
-Now, in another terminal, SSH to the SSH frontend and build the required firmware for the other node.
+Now, in another terminal, SSH to the SSH front end and build the required firmware for the other node.
 
 ```ruby
    username@grenoble:~$ cd RIOT
@@ -393,7 +393,7 @@ after you Obtain the AWS-IOT certifications, you need to create a clone link usi
 ```
 <a name="aftercreate"> </a>
 
-once you followed the above Step 7 and 8 you will see the following directories created in the a8-1 node.
+once you follow the above Steps 7 and 8 you will see the following directories created in the a8-1 node.
 
 <div align="center">
 
@@ -404,7 +404,7 @@ once you followed the above Step 7 and 8 you will see the following directories 
 
 before you run the Python script make sure you have set the path to aws certificates correctly in the file MQTTSbridge.py. 
 
-path that indicates the certificates position (ssh root@node-a8-?)
+path that indicates the certificate's position (ssh root@node-a8-?)
 
 ```ruby
 #path that indicates the certificates position (ssh root@node-a8-?)
@@ -484,7 +484,7 @@ Finally, you must download the device certificate, key files, and Root CA Certif
 
 
 
-Now need to add the End point to the code. You can get the Endpoint from the below path 
+Now need to add the Endpoint to the code. You can get the Endpoint from the below path 
 
 	AWS IoT  > Settings > Device data endpoint 
 
@@ -528,7 +528,7 @@ Sample JSON data
 	  "lightLevel": "38"
 	}
 
-First, you need to add rules. Follow below steps to add rules 
+First, you need to add rules. Follow the below steps to add rules 
 
 	AWS IoT > Message Routing > Rules > Create rule 
 
@@ -543,7 +543,7 @@ First, you need to add rules. Follow below steps to add rules
 	- Select - “Timestream table (write message into a Timestream table)” 
 	- Add database - If you have not created a database, you can create a database by clicking on “Create Timetream database”. Select standard database. 
 	- Add Table – Click on create timestream table 
-	- Add a IAM role – Click on create new role 
+	- Add an IAM role – Click on create new role 
 
 - Review and create 
 </details>
@@ -577,14 +577,14 @@ You can create the workspace as below
 
 	Amazon Managed Grafana > All workspaces > Select workspace created above > Authentication > Assign new user or group > Select User > Action > Make admin 
 
-If you can't find a user, you have to add a user by below method 
+If you can't find a user, you have to add a user by the below method 
 
 	IAM Identity Center > Users >  Add user (giving email and other information) 
 
 After adding you can see the user under "configure users" in your workspace 
  
 
-Loging to Grafana workspace 
+Login to Grafana workspace 
 
 	Amazon Managed Grafana > All workspaces > Select workspace created above >  Click on “Grafana workspace URL” 
 
@@ -592,9 +592,9 @@ Sign in with AWS SSO
 
 	Add Data Source > Select Amazon Timestream > Select default region (should be equal to Endpoint region) 
 
-Add data base, table and measure. Then save.
+Add database, table, and measure. Then save.
 
-Now you are successfully connected the data source. Then using Grafana, you can create a dashboard as you need. 
+Now you are successfully connected to the data source. Then using Grafana, you can create a dashboard as you need. 
 
 </details>
 
@@ -603,14 +603,14 @@ Now you are successfully connected the data source. Then using Grafana, you can 
 <summary> AWS SNS </summary>
 
 
-Amazon Simple Notification Service (SNS) is a fully managed messaging service by AWS. It enables the publishing of messages to a variety of endpoints, including mobile devices, email, and more. SNS simplifies the creation and management of message-driven applications, providing flexibility and scalability for diverse communication scenarios. In here rules are set for triggering email alerts using AWS SNS service. To set rules follow below steps. 
+Amazon Simple Notification Service (SNS) is a fully managed messaging service by AWS. It enables the publishing of messages to a variety of endpoints, including mobile devices, email, and more. SNS simplifies the creation and management of message-driven applications, providing flexibility and scalability for diverse communication scenarios. Here rules are set for triggering email alerts using the AWS SNS service. To set rules follow the below steps. 
 
 	AWS IoT > Message Routing > Rules > Create rule 
 
 - Specify rule properties 
 
 - Configure SQL statement 
-	- Write this quarry to select  data once the temperature value is greater than 50. And data will be sent to the topic.  
+	- Write this quarry to select  data once the temperature value is greater than 50. Data will be sent to the topic.  
 
 
 			SELECT *,timestamp() as ts FROM 'sensor/station1' WHERE temperature > 50 
@@ -645,12 +645,12 @@ Here rules are set for triggering email alerts using the AWS SNS service. Write 
 
 AWS DynamoDB, a fully managed NoSQL database, we are using this for storing alert data. With seamless scalability and low-latency access, DynamoDB ensures reliable and fast retrieval of alert information. Its flexible schema accommodates evolving data needs, making it a robust solution for storing and retrieving dynamic alert data. 
 
-**Create rule for ingesting alert data into dynamoDB**
+**Create a rule for ingesting alert data into DynamoDB**
 
 	AWS IoT > Message Routing > Rules > Select rule which you create above (for sending email) > Edit
 - Add another rule action  
 	- Choose an action - “DyanamoDBv2 (Split message into multiple colums of a DynamoDB table” 
 	- Add table – Click on “Create DynamoDB table” 
-	- Add a IAM role – Click on “create new role” 
+	- Add an IAM role – Click on “create new role” 
 
 </details>
