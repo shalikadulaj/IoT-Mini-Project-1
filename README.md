@@ -505,6 +505,61 @@ Replace the topic with your topic. Now you can see the data is receiving as belo
 ![5](https://github.com/shalikadulaj/IoT-Mini-Project-1/assets/58818511/edc49f9e-cd09-487c-ad08-107e6074c859)
 
 </div>
+
+<details>
+<summary> Policy </summary> 
+
+
+
+	{
+	  "policy": {
+	    "purpose": "The purpose of this policy is to establish guidelines for the secure and efficient handling of sensor data from remote IoT devices, including temperature and pressure readings. This data will be stored in DynamoDB, and visualized through Grafana.",
+	    "dataCollectionAndTransmission": {
+	      "instructions": "All IoT devices must securely transmit temperature and pressure data to the designated AWS Lambda endpoint using encrypted communication to ensure data integrity and confidentiality."
+	    },
+	      "dataStorageInDynamoDB": {
+	      "database": "Utilize Amazon DynamoDB as the primary database for storing processed IoT sensor data in JSON format.",
+	      "tableAndSchema": "Define appropriate tables and schema within DynamoDB to efficiently store and retrieve temperature and pressure readings."
+	    },
+	    "dataVisualizationUsingGrafana": {
+	      "platform": "Grafana will be the designated platform for visualizing IoT sensor data.",
+	      "configuration": "Configure Grafana dashboards to display real-time and historical temperature and pressure readings.",
+	      "accessControl": "Access to Grafana should be restricted to authorized personnel only."
+	    },
+	    "securityMeasures": {
+	      "accessControls": "Implement access controls to restrict unauthorized access to AWS DynamoDB, and Grafana.",
+	      "encryption": "Utilize encryption for data in transit and at rest, both between IoT devices and DynamoDB."
+	    },
+	    "complianceWithPrivacyRegulations": {
+	      "regulations": "Ensure that the collection, storage, and visualization of sensor data comply with relevant privacy laws and regulations.",
+	      "consents": "Obtain necessary consents or permissions for data collection as required by applicable regulations."
+	    },
+	    "monitoringAndAlerts": {
+	      "monitoring": "Implement monitoring solutions to detect abnormal patterns or potential security incidents in DynamoDB, and Grafana.",
+	      "alerts": "Set up alerts to notify relevant personnel in case of system anomalies or failures."
+	    },
+	    "backupAndDisasterRecovery": {
+	      "plan": "Establish a robust backup and disaster recovery plan for both DynamoDB, and Grafana.",
+	      "testing": "Regularly test the restoration process to ensure data integrity in case of a failure."
+	    },
+	    "documentationAndTraining": {
+	      "documentation": "Maintain comprehensive documentation for the configuration and setup of Lambda functions, DynamoDB, and Grafana."
+	         },
+	    "policyReview": "This policy will be reviewed annually and updated as necessary to align with changes in technology, regulations, or organizational requirements.",
+	    "acknowledgment": "I acknowledge that I have read and understood the IoT Sensor Data Management Policy. I agree to comply with all the stipulated rules and guidelines.",
+	    "approval": "[Shalika,Kavinda] [2023/12/31]"
+	  }
+	}
+	
+
+
+
+
+
+
+
+</details>
+
 </details>
 
 </details>
